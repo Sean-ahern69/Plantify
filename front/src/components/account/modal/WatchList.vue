@@ -1,5 +1,5 @@
 <template>
-    
+    <h1>Watch List</h1>
 </template>
 
 <style scoped>

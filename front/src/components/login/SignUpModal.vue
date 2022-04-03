@@ -1,5 +1,5 @@
 <template>
-    
+    <h1>sign up modal</h1>
 </template>
 
 <style scoped>

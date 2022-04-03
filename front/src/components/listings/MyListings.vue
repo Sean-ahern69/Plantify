@@ -1,5 +1,5 @@
 <template>
-    
+    <h1>my listings</h1>
 </template>
 
 <style scoped>

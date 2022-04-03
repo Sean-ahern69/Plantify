@@ -1,5 +1,5 @@
 <template>
-    
+    <h1>nav bar</h1>
 </template>
 
 <style scoped>

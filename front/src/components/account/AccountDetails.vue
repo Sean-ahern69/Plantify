@@ -1,5 +1,5 @@
 <template>
-    
+    <h1>Account details</h1>
 </template>
 
 <style scoped>

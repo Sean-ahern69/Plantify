@@ -1,5 +1,5 @@
 <template>
-    
+    <h1>plant listing</h1>
 </template>
 
 <style scoped>
