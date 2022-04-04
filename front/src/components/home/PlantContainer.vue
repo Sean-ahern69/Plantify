@@ -1,8 +1,13 @@
 <template>
-    <h1>Plant Container</h1>
+   
+   
+    <PlantListing/>
+    
+
 </template>
 
 <style scoped>
+ 
 
 </style>
 
@@ -11,5 +16,5 @@
 </script>
 
 <script setup>
-
+import PlantListing from "./PlantListing.vue"
 </script>
