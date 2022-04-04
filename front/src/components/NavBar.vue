@@ -4,7 +4,7 @@
 
     <div class="flex_container" >
 
-        <router-link to="/" class="flex_child"><img :src="homeicon" class="icon_class" ><span class="icon_label">Home</span></router-link>
+        <router-link to="/Home" class="flex_child"><img :src="homeicon" class="icon_class" ><span class="icon_label">Home</span></router-link>
 
         <router-link to="/Listings" class="flex_child"><img :src="listingicon" class="icon_class" > <span class="icon_label">Listings</span></router-link>
 

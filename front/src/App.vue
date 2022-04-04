@@ -5,12 +5,16 @@ import NavBar from './components/NavBar.vue';
 
 <template>
   
-<h1>Welcome</h1>
+
+
+<router-view></router-view>
 
 <NavBar/>
 
 </template>
 
 <style>
-
+*{
+    margin: 0;
+}
 </style>
