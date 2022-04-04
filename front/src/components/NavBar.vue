@@ -4,22 +4,28 @@
 
     <div class="flex_container" >
 
-        <div class="flex_child"><img :src="homeicon" class="icon_class" ><span class="icon_label">Home</span></div>
-        <div class="flex_child"><img :src="listingicon" class="icon_class" > <span class="icon_label">Listings</span> </div>
+        <router-link to="/" class="flex_child"><img :src="homeicon" class="icon_class" ><span class="icon_label">Home</span></router-link>
+
+        <router-link to="/Listings" class="flex_child"><img :src="listingicon" class="icon_class" > <span class="icon_label">Listings</span></router-link>
+
+<!-- the watchlist below needs to be a modal popup not a router -->
         <div class="flex_child"><img :src="watchlisticon" class="icon_class" > <span class="icon_label">Watchlist</span> </div>
-        <div class="flex_child"><img :src="accounticon" class="icon_class" ><span class="icon_label">Account</span></div>
+
+        <router-link to="/Account" class="flex_child"><img :src="accounticon" class="icon_class" ><span class="icon_label">Account</span></router-link>
 
     </div>
 
 </template>
 
 <style scoped>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 *{
     margin:0;
 }
 
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 .flex_container{
     display:flex;
@@ -36,6 +42,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
 }
 
 .icon_class{
