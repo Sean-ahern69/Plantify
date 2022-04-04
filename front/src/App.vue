@@ -12,8 +12,5 @@ import NavBar from './components/NavBar.vue';
 </template>
 
 <style>
-*{
-    margin:0;
-}
 
 </style>
