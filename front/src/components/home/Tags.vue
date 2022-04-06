@@ -4,32 +4,32 @@
     <h1>P L A N T I F Y</h1>
 </div>
 <div class="tags5">
-<div class="all">
-<h2><span>ALL</span></h2>
-</div>
-<div class="indoor">
-<h2><span>INDOOR</span></h2>
-</div>
-<div class="outdoor">
-<h2><span>OUTDOOR</span></h2>
-</div>
-<div class="large">
-<h2><span>LARGE</span></h2>
-</div>
-<div class="small">
-<h2><span>SMALL</span></h2>
-</div>
+    <div class="all">
+    <h2><span>ALL</span></h2>
+    </div>
+    <div class="indoor">
+        <h2><span>INDOOR</span></h2>
+    </div>
+    <div class="outdoor">
+        <h2><span>OUTDOOR</span></h2>
+    </div>
+    <div class="large">
+        <h2><span>LARGE</span></h2>
+    </div>
+    <div class="small">
+        <h2><span>SMALL</span></h2>
+    </div>
 </div>
 <div class="tags3">
-<div class="tropical">
-<h2><span>TROPICAL</span></h2>
-</div>
-<div class="exotic">
-<h2><span>EXOTIC</span></h2>
-</div>
-<div class="easy">
-<h2><span>EASY</span></h2>
-</div>
+    <div class="tropical">
+    <h2><span>TROPICAL</span></h2>
+    </div>
+    <div class="exotic">
+    <h2><span>EXOTIC</span></h2>
+    </div>
+    <div class="easy">
+    <h2><span>EASY</span></h2>
+    </div>
 </div>
     
 </template>

@@ -1,8 +1,8 @@
 <template>
 
-    <h1>Home</h1>
-
-<plantContainer/>
+<PlantModal/>
+        
+    
 
 </template>
 
@@ -16,4 +16,6 @@
 
 <script setup>
 import PlantContainer from '../components/home/PlantContainer.vue';
+import PlantModal from '../components/home/modal/PlantModal.vue';
+import PlantDetails from"../components/home/modal/PlantDetails.vue";
 </script>
