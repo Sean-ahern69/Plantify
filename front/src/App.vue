@@ -1,10 +1,10 @@
 <script setup>
-
+import maxComponent from './components/listings/modal/AddListing.vue'
 </script>
 
 <template>
   
-<h1>Welcome</h1>
+<maxComponent />
 
 </template>
 
