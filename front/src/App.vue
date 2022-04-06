@@ -1,13 +1,21 @@
 <script setup>
 
+import maxComponent from './components/listings/modal/AddListing.vue'
+
+
 
 
 import NavBar from './components/NavBar.vue';
+
 </script>
 
 
 
 <template>
+
+  
+<maxComponent />
+
 
 
 
@@ -17,6 +25,7 @@ import NavBar from './components/NavBar.vue';
 
 
 <NavBar/>
+
 
 
 
