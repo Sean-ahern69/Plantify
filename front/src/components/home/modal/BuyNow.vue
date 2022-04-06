@@ -1,5 +1,5 @@
 <template>
-    
+    <h1>buy now</h1>
 </template>
 
 <style scoped>
