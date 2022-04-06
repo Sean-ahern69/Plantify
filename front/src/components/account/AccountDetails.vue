@@ -42,7 +42,7 @@ import AccountOptions from './AccountOptions.vue';
         <input type="text" id="password" :placeholder="usersData[0].password" />
       </div>
 
-      <button @click="updateUser">UPDATE PROFILE</button>
+      <button @click="updateUser">UPDATE PROFILE<br>-Not work yet(Error)-</button>
     </form>
   </div>
 

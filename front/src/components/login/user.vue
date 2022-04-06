@@ -1,8 +1,10 @@
 <template>
   <div class="wrap">
-    <p>This area is for checking API "will not show up in app"</p>
+    <p>This area is for checking API
+      <br> add #hide{display:none} at SignUpModal.vue
+    </p>
     <div class="user">
-      <h1>{{ userProp.name }}</h1>
+      <h3>{{ userProp.name }}</h3>
       <button @click="delEmit">Delete</button>
       <button @click="updateEmit">Update</button>
     </div>
@@ -36,6 +38,11 @@ defineProps({
 </script>
 
 <style scoped>
+
+p{
+  text-align: center;
+}
+
 .wrap {
   background: #dadada;
   padding: 10px;
