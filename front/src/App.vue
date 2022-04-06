@@ -10,12 +10,6 @@ import NavBar from './components/NavBar.vue';
 <template>
 
   
-<maxComponent />
-
-
-
-
-
 <router-view></router-view>
 
 
