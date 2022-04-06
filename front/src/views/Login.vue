@@ -1,6 +1,5 @@
 <template>
-    <h1>Login</h1>
-    <SignIn />
+    <LogIn />
 </template>
 
 <style scoped>
@@ -12,6 +11,5 @@
 </script>
 
 <script setup>
-
-import SignIn from "../components/login/SignUpModal.vue"
+import LogIn from "../components/login/Login.vue"
 </script>
