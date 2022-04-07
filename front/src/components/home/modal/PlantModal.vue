@@ -1,5 +1,6 @@
 <script setup>
-import PlantDetails from "./PlantDetails.vue"
+import PlantDetails from "./PlantDetails.vue";
+import BuyNow from "./BuyNow.vue";
 </script>
 
 
@@ -14,7 +15,12 @@ import PlantDetails from "./PlantDetails.vue"
         <div class="plant-dets">
             <PlantDetails/>
         </div>
+
+        <div class="buy-now">
+            <BuyNow/>
+        </div>
     </div>
+    
 </template>
 
 <style scoped>
@@ -44,6 +50,13 @@ import PlantDetails from "./PlantDetails.vue"
         background-color: #CBEAD1;
         height: 140vh;
     }
+
+    .buy-now{
+        position: fixed;
+        bottom: 90px;
+        width: 100%;
+    }
+    
 </style>
 
 <script>
