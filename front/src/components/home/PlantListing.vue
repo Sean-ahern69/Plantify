@@ -3,14 +3,14 @@
 
        <div class="plant-box">
         <div class="plant-img">
-            <img src="https://www.pngitem.com/pimgs/m/67-678433_small-houseplant-png-transparent-png.png" alt="doom-creeper">
+            <img :src="peacelily">
         </div>
             <div class="box-info">
                 <div class="intials">
                     <h4>KJ</h4>
                 </div>
                 <div class="box-price">
-                    <h1>Monstera</h1>
+                    <h1>Peace Lily</h1>
                     <h3>$35</h3>
                 </div>
 
@@ -19,7 +19,7 @@
         
        <div class="plant-box">
         <div class="plant-img">
-            <img src="https://www.pngitem.com/pimgs/m/67-678433_small-houseplant-png-transparent-png.png" alt="doom-creeper">
+            <img :src="peacelily">
         </div>
             <div class="box-info">
                 <div class="intials">
@@ -111,6 +111,17 @@
 </style>
 
 <script>
+
+export default {
+  name: 'NavbarComponent',
+  data: function() {
+    return {
+      peacelily: './src/assets/PeaceLily.png'
+    }
+  }
+}
+
+
 
 </script>
 
