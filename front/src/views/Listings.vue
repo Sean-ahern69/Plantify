@@ -1,5 +1,7 @@
 <template>
-   <h1>listings</h1> 
+   <h1>listings</h1>
+   
+   <AddListing/>
 </template>
 
 <style scoped>
@@ -11,5 +13,5 @@
 </script>
 
 <script setup>
-
+import AddListing from '../components/listings/modal/AddListing.vue'  
 </script>
