@@ -1,6 +1,10 @@
 <template>
+<div>
 
-<PlantContainer/>
+    <Tags/>
+    <PlantContainer/>
+</div>
+
 
 
 </template>
@@ -15,18 +19,7 @@
 
 <script setup>
 import PlantContainer from '../components/home/PlantContainer.vue';
+import Tags from "../components/home/Tags.vue";
 
-export default {
-  data () {
-     return {
-       itemList: [{
-        "id": 1,
-        "isHidden": false
-      },
-    ],
-
-     }
-  }
-}
 
 </script>
