@@ -6,6 +6,7 @@
         </div>
 
         <div class="modal_slider" >
+          <h3>Price</h3>
         <input type="range" name="distanceInputName" id="distanceInputId" value="0" min="0" max="500">
         </div>
         
@@ -72,6 +73,12 @@ h2{
     text-transform: uppercase;
 }
 
+h3{
+    color: #329D9C;
+    font-family: 'Poppins', sans-serif;
+    font-size: 600;
+    
+}
 
 input[type=range] {
     height: 25px;
