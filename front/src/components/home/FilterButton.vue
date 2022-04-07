@@ -1,7 +1,7 @@
 <template>
-
+   
     <div>
-    <img :src="addlistingicon" class="add_filter_button" >
+    <img :src="filtericon" class="add_filter_button" >
     </div>
 
 </template>
@@ -18,10 +18,10 @@
 
 <script>
 export default {
-  name: 'AddListingButton',
+  name: 'FilterButton',
   data: function() {
     return {
-      addlistingicon: './src/assets/plus.png'
+      filtericon: './src/assets/filter.png'
     }
   }
 }
