@@ -6,6 +6,7 @@ import Listings from '../views/Listings.vue'
 import Account from '../views/Account.vue'
 import Login from '../views/Login.vue'
 import Home from '../views/Home.vue'
+import Watchlist from '../views/Watchlistrouter.vue'
 
 const routes = [
     {
@@ -22,6 +23,11 @@ const routes = [
         path: '/Home',
         name: 'Home', 
         component: Home
+    },
+    {
+        path: '/Watchlist',
+        name: 'Watchlist', 
+        component: Watchlist
     },
     {
         path: '/',
