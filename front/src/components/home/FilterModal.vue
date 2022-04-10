@@ -8,8 +8,14 @@
 
 <div class="modal_buttons" >
   <h3>Price</h3>
-  <input type="range" name="distanceInputName" id="distanceInputId" value="0" min="0" max="500">
-    <output>24</output>
+
+  <div>
+    <div class="output">
+    <Slider v-model="value" />
+  </div>
+   </div>
+
+
     <h3>Location</h3>
     <input type="text" >
 </div>
@@ -17,12 +23,41 @@
  
 </div>
 
-
-
 </template>
 
 
+<script>
+  import Slider from '@vueform/slider'
+
+  export default {
+    components: {
+      Slider,
+    },
+    data() {
+      return {
+        value: 20
+      }
+    }
+  }
+</script>
+
+
+<style src="@vueform/slider/themes/default.css"></style>
+
 <style scoped>
+
+
+
+.output {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  margin-bottom: 50px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  
+}
 
 .modal_bkg{
 
@@ -77,35 +112,6 @@ h3{
     
 }
 
-input[type=range] {
-    height: 25px;
-    -webkit-appearance: none;
-    margin: 10px 0;
-    width: 100%;
-  }
-
-  input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 5px;
-    cursor: pointer;
-    animation: 0.2s;
-    box-shadow: 0px 0px 0px #000000;
-    background: #b6d7d7;
-    border-radius: 1px;
-    border: 0px solid #000000;
-  }
-  input[type=range]::-webkit-slider-thumb {
-    box-shadow: 0px 0px 0px #000000;
-    border: 1px solid #329D9C;
-    height: 18px;
-    width: 18px;
-    border-radius: 25px;
-    background: #329D9C;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -7px;
-  }
- 
  
 
 

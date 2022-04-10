@@ -7,6 +7,16 @@
    <div id="square">
        <square width="190px" height="190px"></square>
     </div>
+
+      <!-- <div class="input_container">
+        <input type="text" v-model="name" placeholder="Name" />
+        <input type="text" v-model="price" placeholder="Price" />
+        <input type="text" v-model="description" placeholder="Description" />
+        <input type="text" v-model="photo" placeholder="Photo URL" />
+        <input type="text" v-model="location" placeholder="Loaction" />
+
+      </div> -->
+
 </template>
 
 <style scoped>
@@ -38,18 +48,8 @@ h2{
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 81.25%;
+}
 
-      <div class="input_container">
-        <input type="text" v-model="name" placeholder="Name" />
-        <input type="text" v-model="price" placeholder="Price" />
-        <input type="text" v-model="description" placeholder="Description" />
-        <input type="text" v-model="photo" placeholder="Photo URL" />
-        <input type="text" v-model="location" placeholder="Loaction" />
-
-      </div>
-</template>
-
-<style scoped>
 .input_container {
   display: flex;
   flex-direction: column;
@@ -70,7 +70,7 @@ input {
 
 }
 
-square {
+.square {
     height: 190px;
     width: 190px;
     color: #FFFFFF;
@@ -82,12 +82,3 @@ square {
 </style>
 
 
-
-
-<script>
-
-</script>
-
-<script setup>
-
-</script>

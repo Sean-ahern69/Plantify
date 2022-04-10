@@ -54,11 +54,7 @@ export default {
 
 import AddListing from '../components/listings/modal/AddListing.vue'  
 
-
-import AddListing from "../components/listings/modal/AddListing.vue"
-
 import AddListingButtonVue from '../components/listings/AddListingButton.vue';
-import AddListing from '../components/listings/modal/AddListing.vue'
 
 
 </script>
