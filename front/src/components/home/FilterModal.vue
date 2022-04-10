@@ -1,31 +1,25 @@
 <template>
+
+<div class="modal_bkg" >
+
+  <div class="modal_content" >
+  <h1>FILTER</h1><h2>SAVE</h2>
+  </div>
+
+<div class="modal_buttons" >
+  <h3>Price</h3>
+  <input type="range" name="distanceInputName" id="distanceInputId" value="0" min="0" max="500">
+    <output>24</output>
+    <h3>Location</h3>
+    <input type="text" >
+</div>
+
  
-    <div class="modal_bkg" >
-        <div class="modal_content" >
-        <h1>FILTER</h1><h2>SAVE</h2>
-        </div>
-
-        <div class="modal_slider" >
-          <h3>Price</h3>
-        <input type="range" name="distanceInputName" id="distanceInputId" value="0" min="0" max="500">
-        </div>
-        
-
-    </div>
-
+</div>
 </template>
 
-<script>
-
-</script>
-
-<script setup>
-
-</script>
 
 <style scoped>
-
-
 
 .modal_bkg{
 
@@ -54,7 +48,7 @@ width: 90%;
     margin: 15px;
 }
 
-.modal_slider{
+.modal_buttons{
 
     margin: 30px;
 }
@@ -86,9 +80,7 @@ input[type=range] {
     margin: 10px 0;
     width: 100%;
   }
-  input[type=range]:focus {
-    outline: none;
-  }
+
   input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 5px;
@@ -110,86 +102,9 @@ input[type=range] {
     -webkit-appearance: none;
     margin-top: -7px;
   }
-  input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #329D9C;
-  }
-  input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 5px;
-    cursor: pointer;
-    animation: 0.2s;
-    box-shadow: 0px 0px 0px #000000;
-    background: #329D9C;
-    border-radius: 1px;
-    border: 0px solid #000000;
-  }
-  input[type=range]::-moz-range-thumb {
-    box-shadow: 0px 0px 0px #000000;
-    border: 1px solid #329D9C;
-    height: 18px;
-    width: 18px;
-    border-radius: 25px;
-    background: #329D9C;
-    cursor: pointer;
-  }
-  input[type=range]::-ms-track {
-    width: 100%;
-    height: 5px;
-    cursor: pointer;
-    animation: 0.2s;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-  input[type=range]::-ms-fill-lower {
-    background: #329D9C;
-    border: 0px solid #000000;
-    border-radius: 2px;
-    box-shadow: 0px 0px 0px #000000;
-  }
-  input[type=range]::-ms-fill-upper {
-    background: #329D9C;
-    border: 0px solid #000000;
-    border-radius: 2px;
-    box-shadow: 0px 0px 0px #000000;
-  }
-  input[type=range]::-ms-thumb {
-    margin-top: 1px;
-    box-shadow: 0px 0px 0px #000000;
-    border: 1px solid #329D9C;
-    height: 18px;
-    width: 18px;
-    border-radius: 25px;
-    background: #329D9C;
-    cursor: pointer;
-  }
-  input[type=range]:focus::-ms-fill-lower {
-    background: #329D9C;
-  }
-  input[type=range]:focus::-ms-fill-upper {
-    background: #329D9C;
-  }
+ 
+ 
 
-
-  input[type=text]{
-  padding: 10px 20px;
-  width: 70%;
-  display: inline-block;
-  border: 2px solid rgb(95, 94, 94);
-  border-radius: 4px;
-  box-sizing: border-box;
-  box-shadow: 2px 2px #afaeae;
-  }
-
-  input[type=number]{
-    padding: 10px 20px;
-    width: 70%;
-    display: inline-block;
-    border: 2px solid rgb(95, 94, 94);
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: 2px 2px #afaeae;
-    }
 
 
 </style>
