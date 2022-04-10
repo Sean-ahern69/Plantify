@@ -1,8 +1,11 @@
 <template>
+<div>
 
-    <h1>Home</h1>
+    <Tags/>
+    <PlantContainer/>
+</div>
 
-<plantContainer/>
+
 
 <!-- code for the filter icon to display modal on click -->
 
@@ -39,6 +42,12 @@ export default {
 
 <script setup>
 import PlantContainer from '../components/home/PlantContainer.vue';
+
+import Tags from "../components/home/Tags.vue";
+
+
+
 import filtericon from '../components/home/FilterButton.vue';
 import FilterModal from '../components/home/FilterModal.vue'
+
 </script>

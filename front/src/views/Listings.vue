@@ -1,4 +1,9 @@
 <template>
+
+   <div>
+      <AddListing/>
+   </div>
+
    <h1>listings</h1> 
 
 
@@ -13,10 +18,15 @@
   <span v-else></span>
 </div>
 
+
 </template>
 
 <style scoped>
-
+div{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 </style>
 
 <script>
@@ -35,6 +45,10 @@ export default {
 </script>
 
 <script setup>
+
+import AddListing from "../components/listings/modal/AddListing.vue"
+
 import AddListingButtonVue from '../components/listings/AddListingButton.vue';
 import AddListing from '../components/listings/modal/AddListing.vue'
+
 </script>
