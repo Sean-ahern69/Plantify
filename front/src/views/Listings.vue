@@ -1,5 +1,10 @@
 <template>
 
+   <h1>listings</h1>
+   
+   <AddListing/>
+
+
    <div>
       <AddListing/>
    </div>
@@ -17,6 +22,7 @@
  <!--if it is already displayed, hide the component (display nothing)-->
   <span v-else></span>
 </div>
+
 
 
 </template>
@@ -46,9 +52,13 @@ export default {
 
 <script setup>
 
+import AddListing from '../components/listings/modal/AddListing.vue'  
+
+
 import AddListing from "../components/listings/modal/AddListing.vue"
 
 import AddListingButtonVue from '../components/listings/AddListingButton.vue';
 import AddListing from '../components/listings/modal/AddListing.vue'
+
 
 </script>
