@@ -1,27 +1,32 @@
 <template>
-    <div>
-        <img src="../../../assets/cross.png"><h1>LISTING</h1><h2>SAVE</h2>
-    </div>
+      <div class="input_container">
+        <input type="text" v-model="name" placeholder="Name" />
+        <input type="text" v-model="price" placeholder="Price" />
+        <input type="text" v-model="description" placeholder="Description" />
+        <input type="text" v-model="photo" placeholder="Photo URL" />
+        <input type="text" v-model="location" placeholder="Loaction" />
+
+      </div>
 </template>
 
 <style scoped>
-img{
-    height: 17.5px;
+.input_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
 }
-div{
-    display: flex;
-    justify-content: space-between;
+
+input {
+  width: 290px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid #cbead1;
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
-h1{
-    color: #329D9C;
-    background: #FFFFFF;
-    justify-content: space-between;
-}
-h2{
-    color: #73C088;
-    background: #FFFFFF;
-    justify-content: space-between;
-    text-decoration-line: underline;
+
+::placeholder {
+  color: #cbead1;
 }
 </style>
 
