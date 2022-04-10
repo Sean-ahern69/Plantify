@@ -25,7 +25,7 @@
     
 <style scoped>
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 
 .logo {
     font-family: 'Poppins';
@@ -38,8 +38,33 @@
 .tags{
     display:flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
 }
-
+.tags a{
+    text-decoration: none;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 2px;
+    margin-left: 3px;
+    color: white;
+    background-color: lightgray;
+    font-family: 'poppins';
+    font-weight: 200;
+    font-size: .8em;
+    border-radius: 5px;
+}
+.tags a h3{
+    font-weight: 300;
+}
+.container{
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.tags a:active{
+    background-color:#56C596;;
+}
 </style>
 
 <script>
