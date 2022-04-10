@@ -44,9 +44,19 @@
 
 <style src="@vueform/slider/themes/default.css"></style>
 
+<style>
+.slider-connect{
+  background: var(--slider-connect-bg,#56C596);
+
+}
+
+.slider-tooltip{
+  background: var(--slider-tooltip-bg,#56C596);
+  border: 1px solid var(--slider-tooltip-bg,#56C596);
+}
+</style>
+
 <style scoped>
-
-
 
 .output {
   font-family: 'Poppins', sans-serif;
