@@ -5,6 +5,9 @@
 
 
 
+
+
+
 import NavBar from './components/NavBar.vue';
 
 </script>
@@ -12,6 +15,7 @@ import NavBar from './components/NavBar.vue';
 
 
 <template>
+
 
   
 
