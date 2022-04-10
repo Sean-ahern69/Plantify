@@ -60,8 +60,6 @@
 
 .output {
   font-family: 'Poppins', sans-serif;
-  padding: 20px;
-  margin-bottom: 50px;
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
