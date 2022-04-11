@@ -7,6 +7,20 @@
    <div id="square">
        <square width="190px" height="190px"></square>
     </div>
+
+
+
+
+
+      <div class="input_container">
+        <input type="text" v-model="inputProductData.name" placeholder="Name" />
+        <input type="text" v-model="inputProductData.price" placeholder="Price" />
+        <input type="text" style="height:100px;" v-model="inputProductData.description" placeholder="Description" />
+        <input type="text" v-model="inputProductData.photo" placeholder="Photo URL" />
+        <input type="text" v-model="inputProductData.loaction" placeholder="Location" />
+
+        <a href=""><button @click="addProduct" class="button">Add</button></a>
+      </div>
 </template>
 
 <style scoped>
@@ -30,6 +44,7 @@ h1{
     font-size: 106.25%;
 
 }
+
 h2{
     color: #73C088;
     background: #FFFFFF;
@@ -38,19 +53,13 @@ h2{
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 81.25%;
+}
 
-      <div class="input_container">
-        <input type="text" v-model="inputProductData.name" placeholder="Name" />
-        <input type="text" v-model="inputProductData.price" placeholder="Price" />
-        <input type="text" style="height:100px;" v-model="inputProductData.description" placeholder="Description" />
-        <input type="text" v-model="inputProductData.photo" placeholder="Photo URL" />
-        <input type="text" v-model="inputProductData.loaction" placeholder="Location" />
 
-        <a href=""><button @click="addProduct" class="button">Add</button></a>
-      </div>
-</template>
+
 
 <style scoped>
+
 .input_container {
   display: flex;
   flex-direction: column;
@@ -71,7 +80,7 @@ input {
 
 }
 
-square {
+#square {
     height: 190px;
     width: 190px;
     color: #FFFFFF;
@@ -81,6 +90,8 @@ square {
 }
 
 </style>
+
+
 
 
 
@@ -146,3 +157,4 @@ export default {
 <script setup>
 
 </script>
+
