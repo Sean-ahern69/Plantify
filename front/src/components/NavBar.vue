@@ -36,6 +36,7 @@
     bottom: 0;
     align-items: center;
     position: fixed;         /* may need to come out once integrated with app*/
+    z-index: 50;
 }
 
 .flex_child{
