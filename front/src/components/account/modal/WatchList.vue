@@ -1,12 +1,30 @@
+
 <template>
+
+<!-- function favourite_list (){
+
+if(current_fave.childNodes[1].classList.contains("full_heart") == false) {
+current_fave.childNodes[1].src= "./Images/heart.png";
+current_fave.childNodes[1].classList.toggle('full_heart');
+console.log(add_favourite.childNodes[1]);
+}
+
+else {
+current_fave.childNodes[1].src= "./Images/Artboard 2empty_heart.png";
+current_fave.childNodes[1].classList.toggle('full_heart');
+}
+} -->
+
+
+
     <h1>WATCHLIST</h1>
 
 <div class="container">
 
        <div class="plant-box">
-        
-            <div class="plant-img">
-                <img v-bind:src="'https:'+'//images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8&w=1000&q=80'" /> 
+            <div class="plant-img-div">
+                <div class="heart-icon" ><img src="../../../assets/emptyheart.png" alt=""></div>
+                <img class="plant-img" v-bind:src="'https:'+'//images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8&w=1000&q=80'" /> 
             </div>
             
             <div class="box-info">
@@ -18,14 +36,14 @@
                     <h3>product price</h3>
                 </div>
              </div>
-
         </div>
 
-        
-       <div class="plant-box">
-        
-            <div class="plant-img">
-                <img v-bind:src="'https:'+'//images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8&w=1000&q=80'" /> 
+<!-- another one for testing -->
+
+               <div class="plant-box">
+            <div class="plant-img-div">
+                <div class="heart-icon" ><img src="../../../assets/emptyheart.png" alt=""></div>
+                <img class="plant-img" v-bind:src="'https:'+'//images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8&w=1000&q=80'" /> 
             </div>
             
             <div class="box-info">
@@ -37,33 +55,23 @@
                     <h3>product price</h3>
                 </div>
              </div>
-
         </div>
 
-        
-       <div class="plant-box">
-        
-            <div class="plant-img">
-                <img v-bind:src="'https:'+'//images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8&w=1000&q=80'" /> 
-            </div>
-            
-            <div class="box-info">
-                <div class="intials">
-                    <h4>KJ</h4>
-                </div>
-                <div class="box-price">
-                    <h1>product name</h1>
-                    <h3>product price</h3>
-                </div>
-             </div>
-
-        </div>
         
 </div>
     
 </template>
 
+
 <style scoped>
+
+
+
+.heart-icon{
+    position: absolute;
+    right: 2%;
+}
+
 h1{
      font-family: 'Poppins';
     font-weight: 600;
@@ -129,13 +137,14 @@ h1{
     font-weight: 400;
 }
 
-.plant-img img{
+.plant-img{
     width: 100%;
-    height: 100%;
 }
 
-.plant-img{
+
+.plant-img-div{
     background-color: #CBEAD1;
+    position: relative;
 }
 
 
