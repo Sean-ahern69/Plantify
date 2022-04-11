@@ -16,13 +16,11 @@ current_fave.childNodes[1].classList.toggle('full_heart');
 
 
 
-    <h1>WATCHLIST</h1>
-
 <div class="container">
 
        <div class="plant-box">
             <div class="plant-img-div">
-                <div class="heart-icon" ><img src="../../../assets/emptyheart.png" alt=""></div>
+                <div @click="ProductObject._id" class="heart-icon" ><img src="../../../assets/emptyheart.png" alt=""></div>
                 <img class="plant-img" v-bind:src="'https:'+'//images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8&w=1000&q=80'" /> 
             </div>
             
@@ -31,12 +29,11 @@ current_fave.childNodes[1].classList.toggle('full_heart');
                     <h4>KJ</h4>
                 </div>
                 <div class="box-price">
-                    <h1>{{ProductObject.name}}</h1>
-                    <h3>${{ProductObject.price}}</h3>
+                    <h1>{{WatchlistPlant.name}}</h1>
+                    <h3>${{WatchlistPlant.price}}</h3>
                 </div>
              </div>
         </div>
-
 
         
 </div>
@@ -46,19 +43,12 @@ current_fave.childNodes[1].classList.toggle('full_heart');
 
 <style scoped>
 
-
-
 .heart-icon{
     position: absolute;
     right: 2%;
 }
 
-h1{
-     font-family: 'Poppins';
-    font-weight: 600;
-    color: #329D9C;
-    text-align: center;
-}
+
 
 .container{
     display: flex;
@@ -90,7 +80,7 @@ h1{
     margin: 1%;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    
+
 }
 .box-info{
     display: flex;
@@ -131,13 +121,38 @@ h1{
 
 </style>
 
-
-
 <script setup>
 defineProps({
-  ProductObject: {
-    type: Object,
-    required: true
+  PlantPropID: {
+    type: string,
+    required: true,
   }
 })
 </script>
+
+
+<script>
+export default {
+  data () {
+     return {
+       WatchlistPlant:{}
+
+     }
+  },
+  
+  methods:{
+       async fetchAPI(){
+            const response = await fetch('http://localhost:4500/products/get/'+PlantPropID);
+            const fetchedData = await response.json();
+            this.WatchlistPlant = fetchedData;   
+        }
+  },
+
+  created(){
+    this.fetchAPI();
+  }
+}
+
+</script>
+
+

@@ -4,7 +4,7 @@
 <div>
 <h1>WATCHLIST</h1>
 
-<watchlist v-for="(product) in productsData" :key="product._id" :ProductObject="product" />
+<watchlist v-for="ID in WatchlistIDs" :key="ID" :PlantPropID="ID" />
    
 </div>
 
@@ -12,48 +12,28 @@
 </template>
 
 <style scoped>
-
+h1{
+     font-family: 'Poppins';
+    font-weight: 600;
+    color: #329D9C;
+    text-align: center;
+}
 </style>
 
 <script>
 export default {
   data () {
      return {
-        itemList: [{
-        "id": 1,
-        "isHidden": false
-      },
-    ],
-       productsData:[{}],
-       itemList: [{
-        "id": 1,
-        "isHidden": false
-      },
-    ],
+      WatchlistIDs:'625360269c728a6114deb7e2',
+       UserID:'6254192132479808b07ffcbe'
      }
-  },
-  methods:{
-       async fetchAPI(){
-            const response = await fetch('http://localhost:4500/products/');
-            const fetchedData = await response.json();
-            this.productsData = fetchedData;
-        }
-  },
-  created(){
-    this.fetchAPI();
   }
 }
-
 
 </script>
 
 <script setup>
+
 import watchlist from "../components/account/modal/WatchList.vue"
 
-defineProps({
-  ProductObject: {
-    type: Object,
-    required: true
-  }
-})
 </script>
