@@ -1,6 +1,5 @@
 <template>
     
-    <h1>watchlist</h1>
     <watchlist />
 
 </template>
