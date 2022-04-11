@@ -1,7 +1,11 @@
 <template>
 
 
+  
+
+
    <div class="add">
+
 
    <div v-for="item in itemList" :key="item.id"  >
     <!-- on click of the filter icon, check data if 'hidden' -->
@@ -24,11 +28,15 @@
 </template>
 
 <style scoped>
+
+
+
 .add{
    display: flex;
    justify-content: center;
    align-items: center;
 }
+
 </style>
 
 <script>
@@ -48,10 +56,10 @@ export default {
 
 <script setup>
 
-import AddListing from '../components/listings/modal/AddListing.vue'  
 
 
 import AddListingButtonVue from '../components/listings/AddListingButton.vue';
+
 
 
 

@@ -1,8 +1,7 @@
 <script setup>
 import AccountOptions from './AccountOptions.vue';
-// import userVue from './user.vue';
-// import SignUp from '../login/SignUpModal.vue';
-// import LogIn from '../login/Login.vue';
+import userVue from '../login/user.vue';
+
 </script>
 
 <template>
@@ -19,27 +18,27 @@ import AccountOptions from './AccountOptions.vue';
 
       <div class="input_wrap">
         <label for="name">Name</label>
-        <input type="text" id="name" :placeholder="usersData[0].name" />
+        <input type="text" id="name" v-model="inputUserData.name" :placeholder="usersData[0].name" />
       </div>
 
       <div class="input_wrap">
         <label for="email">Email</label>
-        <input type="text" id="email" :placeholder="usersData[0].email" />
+        <input type="text" id="email" v-model="inputUserData.email" :placeholder="usersData[0].email" />
       </div>
 
       <div class="input_wrap">
         <label for="phone">Phone</label>
-        <input type="text" id="phone" placeholder="000 0000 0000" />
+        <input type="text" id="phone" v-model="inputUserData.phone" placeholder="000 0000 0000" />
       </div>
 
       <div class="input_wrap">
         <label for="location"> Location </label>
-        <input type="text" id="locaton" placeholder="Christchurch" />
+        <input type="text" id="location" v-model="inputUserData.location" placeholder="Christchurch" />
       </div>
 
       <div class="input_wrap">
         <label for="password">Password</label>
-        <input type="text" id="password" :placeholder="usersData[0].password" />
+        <input type="text" id="password" v-model="inputUserData.password" :placeholder="usersData[0].password" />
       </div>
 
       <button @click="updateUser">UPDATE PROFILE<br>-Not work yet(Error)-</button>
@@ -48,17 +47,16 @@ import AccountOptions from './AccountOptions.vue';
 
   <div id="break"></div>
 
-  <!-- <userVue
+  <userVue
     v-for="user in usersData"
     :key="user._id"
     :userProp="user"
     @delUserEmit="delUser"
     @updUserEmit="updateUser"
-  /> -->
+  />
 
   <AccountOptions />
-  <!-- <SignUp />
-  <LogIn /> -->
+  
 
   
 </template>
@@ -70,6 +68,13 @@ export default {
   data() {
     return {
       usersData: [],
+      inputUserData: {
+        name: "",
+        email: "",
+        phone: "",
+        location: "",
+        password: ""
+      },
     };
   },
   methods: {
@@ -77,12 +82,6 @@ export default {
       const res = await fetch("http://localhost:4500/users/");
       const result = await res.json();
       this.usersData = result;
-    },
-    async delUser(userID) {
-      const fetchURL = "http://localhost:4500/users/delete/" + userID;
-      const response = await fetch(fetchURL, { method: "DELETE" });
-      const fetchedData = await response.json();
-      this.fetchAPI();
     },
     async updateUser(userID) {
       const fetchURL = "http://localhost:4500/users/update/" + userID;
