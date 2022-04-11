@@ -1,4 +1,3 @@
-
 <template>
 
 <!-- function favourite_list (){
@@ -32,30 +31,12 @@ current_fave.childNodes[1].classList.toggle('full_heart');
                     <h4>KJ</h4>
                 </div>
                 <div class="box-price">
-                    <h1>product name</h1>
-                    <h3>product price</h3>
+                    <h1>{{ProductObject.name}}</h1>
+                    <h3>${{ProductObject.price}}</h3>
                 </div>
              </div>
         </div>
 
-<!-- another one for testing -->
-
-               <div class="plant-box">
-            <div class="plant-img-div">
-                <div class="heart-icon" ><img src="../../../assets/emptyheart.png" alt=""></div>
-                <img class="plant-img" v-bind:src="'https:'+'//images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8&w=1000&q=80'" /> 
-            </div>
-            
-            <div class="box-info">
-                <div class="intials">
-                    <h4>KJ</h4>
-                </div>
-                <div class="box-price">
-                    <h1>product name</h1>
-                    <h3>product price</h3>
-                </div>
-             </div>
-        </div>
 
         
 </div>
@@ -153,5 +134,10 @@ h1{
 
 
 <script setup>
-
+defineProps({
+  ProductObject: {
+    type: Object,
+    required: true
+  }
+})
 </script>
