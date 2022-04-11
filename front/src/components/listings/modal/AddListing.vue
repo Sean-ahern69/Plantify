@@ -10,21 +10,22 @@
     </div>
 
 
-
-
-
       <div class="input_container">
         <input type="text" v-model="inputProductData.name" placeholder="Name" />
         <input type="text" v-model="inputProductData.price" placeholder="Price" />
         <input type="text" style="height:100px;" v-model="inputProductData.description" placeholder="Description" />
         <input type="text" v-model="inputProductData.photo" placeholder="Photo URL" />
-        <input type="text" v-model="inputProductData.loaction" placeholder="Location" />
+        <input type="text" v-model="inputProductData.location" placeholder="Location" />
 
         <a href=""><button @click="addProduct" class="button">Add</button></a>
       </div>
+
 </template>
 
+
+
 <style scoped>
+
 img{
     height: 17.5px;
     padding-top: 1px;
@@ -56,11 +57,6 @@ h2{
     font-size: 81.25%;
 }
 
-
-
-
-<style scoped>
-
 .input_container {
   display: flex;
   flex-direction: column;
@@ -91,9 +87,6 @@ input {
 }
 
 </style>
-
-
-
 
 
 
@@ -150,13 +143,7 @@ export default {
   },
 };
 
-
-
-
 </script>
 
-<script setup>
-
-</script>
 
 
