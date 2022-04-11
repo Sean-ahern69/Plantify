@@ -9,7 +9,7 @@
         <router-link to="/Listings" class="flex_child"><img :src="listingicon" class="icon_class" > <span class="icon_label">Listings</span></router-link>
 
 <!-- the watchlist below needs to be a modal popup not a router -->
-        <div class="flex_child"><img :src="watchlisticon" class="icon_class" > <span class="icon_label">Watchlist</span> </div>
+        <router-link to="/Watchlist" class="flex_child"><img :src="watchlisticon" class="icon_class" > <span class="icon_label">Watchlist</span> </router-link>
 
         <router-link to="/Account" class="flex_child"><img :src="accounticon" class="icon_class" ><span class="icon_label">Account</span></router-link>
 

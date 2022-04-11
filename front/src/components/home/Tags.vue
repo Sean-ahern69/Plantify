@@ -1,42 +1,31 @@
 <template>
 
-<div class="logo">
-    <h1>P L A N T I F Y</h1>
+<div>
+    <div class="logo">
+        <h1>P L A N T I F Y</h1>
+    </div>
+
+    <div class="container">
+        <div class="tags">
+            <a href=""><h3>all</h3></a>
+            <a href=""><h3>Indoor</h3></a>
+            <a href=""><h3>Outdoor</h3></a>
+            <a href=""><h3>Fruit & Veg</h3></a>
+            <a href=""><h3>Tropical</h3></a>
+            <a href=""><h3>Succulent</h3></a>
+            <a href=""><h3>Easy</h3></a>
+            <a href=""><h3>Exotic</h3></a>
+        </div>
+    </div>
 </div>
-<div class="tags5">
-<div class="all">
-<h2><span>ALL</span></h2>
-</div>
-<div class="indoor">
-<h2><span>INDOOR</span></h2>
-</div>
-<div class="outdoor">
-<h2><span>OUTDOOR</span></h2>
-</div>
-<div class="large">
-<h2><span>LARGE</span></h2>
-</div>
-<div class="small">
-<h2><span>SMALL</span></h2>
-</div>
-</div>
-<div class="tags3">
-<div class="tropical">
-<h2><span>TROPICAL</span></h2>
-</div>
-<div class="exotic">
-<h2><span>EXOTIC</span></h2>
-</div>
-<div class="easy">
-<h2><span>EASY</span></h2>
-</div>
-</div>
+
+
     
 </template>
     
 <style scoped>
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 
 .logo {
     font-family: 'Poppins';
@@ -45,90 +34,36 @@
     display: flex;
     justify-content: center;
 }
-.tags5 {
-    display: flex;
-    justify-content: space-evenly;
-}
 
-.tags3 {
-    display: flex;
+.tags{
+    display:flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    align-content: center;
 }
-
-.all {
-    font-family: 'Poppins';
-    font-weight: 400;
-}
-.all span {
-    background-color: #DDDDDD;
-    border-radius: 15%;
-    padding: 0.15em 0.25em;
-}
-.indoor {
-    font-family: 'Poppins';
-    font-weight: 400;
+.tags a{
+    text-decoration: none;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 2px;
+    margin-left: 3px;
     color: white;
-    
+    background-color: lightgray;
+    font-family: 'poppins';
+    font-weight: 200;
+    font-size: .8em;
+    border-radius: 5px;
 }
-.indoor span {
-    background-color: #56C596;
-    border-radius: 15%;
-    padding: 0.15em 0.25em;
+.tags a h3{
+    font-weight: 300;
 }
-.outdoor {
-    font-family: 'Poppins';
-    font-weight: 400;
+.container{
+    padding: 5px;
+    margin-bottom: 10px;
 }
-.outdoor span {
-    background-color: #DDDDDD;
-    border-radius: 15%;
-    padding: 0.15em 0.25em;
-}
-.large {
-    font-family: 'Poppins';
-    font-weight: 400;
-    color: white;
-}
-.large span {
-    background-color: #56C596;
-    border-radius: 15%;
-    padding: 0.15em 0.25em;
-}
-.small {
-    font-family: 'Poppins';
-    font-weight: 400;
-}
-.small span {
-    background-color: #DDDDDD;
-    border-radius: 15%;
-    padding: 0.15em 0.25em;
-}
-.tropical {
-    font-family: 'Poppins';
-    font-weight: 400;
-}
-.tropical span {
-    background-color: #DDDDDD;
-    border-radius: 15%;
-    padding: 0.15em 0.25em;
-}
-.exotic {
-    font-family: 'Poppins';
-    font-weight: 400;
-}
-.exotic span {
-    background-color: #DDDDDD;
-    border-radius: 15%;
-    padding: 0.15em 0.25em;
-}
-.easy {
-    font-family: 'Poppins';
-    font-weight: 400;
-}
-.easy span {
-    background-color: #DDDDDD;
-    border-radius: 15%;
-    padding: 0.15em 0.25em;
+.tags a:active{
+    background-color:#56C596;;
 }
 </style>
 
