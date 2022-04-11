@@ -4,7 +4,9 @@
   
 
 
-   <div class="add">
+
+
+
 
 
    <div v-for="item in itemList" :key="item.id"  >
@@ -15,7 +17,7 @@
  <!--if it is already displayed, hide the component (display nothing)-->
   <span v-else></span>
 </div>
-</div>
+
 
 
 
@@ -29,13 +31,6 @@
 
 <style scoped>
 
-
-
-.add{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
 
 </style>
 
@@ -55,6 +50,10 @@ export default {
 </script>
 
 <script setup>
+
+
+
+import AddListing from '../components/listings/modal/AddListing.vue';
 
 
 
