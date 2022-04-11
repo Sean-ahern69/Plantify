@@ -2,16 +2,6 @@
 
 
   
-
-
-   <div class="add">
-
-
-
-
-   <div
-      <AddListing/>
-   </div>
    <div v-for="item in itemList" :key="item.id"  >
     <!-- on click of the filter icon, check data if 'hidden' -->
  <div @click="item.isHidden = !item.isHidden"><AddListingButtonVue/></div> 
@@ -20,7 +10,7 @@
  <!--if it is already displayed, hide the component (display nothing)-->
   <span v-else></span>
 </div>
-</div>
+
 
 
 
@@ -34,13 +24,6 @@
 
 <style scoped>
 
-
-
-.add{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
 
 </style>
 
@@ -62,9 +45,7 @@ export default {
 <script setup>
 
 
-
-
-
+import AddListing from '../components/listings/modal/AddListing.vue';
 
 import AddListingButtonVue from '../components/listings/AddListingButton.vue';
 
