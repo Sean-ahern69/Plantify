@@ -21,9 +21,17 @@ import userVue from "./user.vue";
           placeholder="PASSWORD"
         />
         <input type="text" placeholder="CONFIRM PASSWORD" />
+        <div id="agree">
+          <input type="checkbox" id="agree">
+          <label for="agree">I have read and agreed to the terms and <br>conditions.</label>
+        </div>
         <button @click="addUser" class="button">SIGN UP</button>
-      </div>      
+
+        <p id="closeModal">Already have account? <a @click="$emit('closeModalEmit')">LOG IN</a></p>
+      </div>            
     </div>
+
+    <h2>PLANTIFY</h2>
 
     <div id="hide">
       <userVue
@@ -34,6 +42,7 @@ import userVue from "./user.vue";
         @updUserEmit="updateUser"
       />
     </div>
+
   </div>
 </template>
 
@@ -63,6 +72,7 @@ import userVue from "./user.vue";
 }
 
 h1 {
+  font-family: "Poppins", sans-serif;
   font-size: 34px;
   letter-spacing: 5px;
   color: #329d9c;
@@ -80,7 +90,7 @@ input {
   border-radius: 8px;
   border: 1px solid #cbead1;
   padding-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 ::placeholder {
@@ -89,12 +99,44 @@ input {
 
 .button {
   padding: 10px;
-  margin-top: 10px;
   background: #73c088;
   color: white;
   border: none;
   border-radius: 8px;
 }
+
+#agree{
+  display: flex;
+  text-align: left;
+  color: #a8a8a8;
+  margin-bottom: 15px;
+}
+
+#agree input{
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+p {
+  color: #a8a8a8;
+  margin-top: 20px;
+}
+
+a {
+  color: #73c088;
+  border-bottom: 1px solid #73c088;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 17px;
+  letter-spacing: 10px;
+  color: #329d9c;
+  padding-top: 50px;
+}
+
 </style>
 
 <script>
@@ -105,7 +147,7 @@ export default {
       inputUserData: {
         name: "",
         email: "",
-        password: "",
+        password: ""
       },
     };
   },
