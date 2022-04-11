@@ -3,11 +3,6 @@
 
    <div class="add">
 
-
-
-   <div
-      <AddListing/>
-   </div>
    <div v-for="item in itemList" :key="item.id"  >
     <!-- on click of the filter icon, check data if 'hidden' -->
  <div @click="item.isHidden = !item.isHidden"><AddListingButtonVue/></div> 
@@ -55,8 +50,6 @@ export default {
 
 import AddListing from '../components/listings/modal/AddListing.vue'  
 
-
-import AddListing from "../components/listings/modal/AddListing.vue"
 
 import AddListingButtonVue from '../components/listings/AddListingButton.vue';
 

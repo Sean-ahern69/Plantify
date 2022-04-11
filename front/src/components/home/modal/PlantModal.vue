@@ -1,6 +1,12 @@
 <script setup>
 import PlantDetails from "./PlantDetails.vue";
 import BuyNow from "./BuyNow.vue";
+defineProps({
+  ProductObject: {
+    type: Object,
+    required: true
+  }
+})
 </script>
 
 
@@ -9,11 +15,12 @@ import BuyNow from "./BuyNow.vue";
 <template>
     <div class="background">
         <div class="plant-image">
-        <img :src="peacelily">
+        <img :src="ProductObject.photo">
         </div>
 
         <div class="plant-dets">
-            <PlantDetails/>
+            <img :src="cross" @click="$emit('closeModel')">
+            <PlantDetails :ProductObject="ProductObject" />
         </div>
 
         <div class="buy-now">
@@ -46,9 +53,14 @@ import BuyNow from "./BuyNow.vue";
        background-color: white;
 
     }
+    .plant-dets img{
+        
+        padding: 5px;
+        width: 7%;
+    }
     .background{
         background-color: #CBEAD1;
-        height: 140vh;
+        height: 134%;
     }
 
     .buy-now{
@@ -64,9 +76,11 @@ export default {
   name: 'NavbarComponent',
   data: function() {
     return {
-      peacelily: './src/assets/PeaceLily.png'
+      peacelily: './src/assets/PeaceLily.png',
+      cross: './src/assets/cross.png'
     }
-  }
+  },
+  emits:['closeModel']
 }
 
 </script>
