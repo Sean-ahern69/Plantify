@@ -8,15 +8,19 @@
        <square width="190px" height="190px"></square>
     </div>
 
-        <div class="input_container">
-        <input type="text" v-model="name" placeholder="Name" />
-        <input type="text" v-model="price" placeholder="Price" />
-        <input type="text" v-model="description" placeholder="Description" />
-        <input type="text" v-model="photo" placeholder="Photo URL" />
-        <input type="text" v-model="location" placeholder="Loaction" />
 
+
+
+
+      <div class="input_container">
+        <input type="text" v-model="inputProductData.name" placeholder="Name" />
+        <input type="text" v-model="inputProductData.price" placeholder="Price" />
+        <input type="text" style="height:100px;" v-model="inputProductData.description" placeholder="Description" />
+        <input type="text" v-model="inputProductData.photo" placeholder="Photo URL" />
+        <input type="text" v-model="inputProductData.loaction" placeholder="Location" />
+
+        <a href=""><button @click="addProduct" class="button">Add</button></a>
       </div>
-
 </template>
 
 <style scoped>
@@ -51,6 +55,11 @@ h2{
     font-size: 81.25%;
 }
 
+
+
+
+<style scoped>
+
 .input_container {
   display: flex;
   flex-direction: column;
@@ -84,4 +93,68 @@ input {
 
 
 
+
+
+
+<script>
+
+export default {
+  data() {
+    return {
+      productsData: [],
+      inputProductData: {
+        name: "",
+        price: "",
+        description: "",
+        photo: "",
+        location: "",
+      },
+    };
+  },
+  methods: {
+    async fetchAPI() {
+      const response = await fetch("http://localhost:4500/products/");
+      const fetchedData = await response.json();
+      this.productsData = fetchedData;
+    },
+    async addProduct() {
+      const response = await fetch("http://localhost:4500/products/addproduct/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(this.inputProductData),
+      });
+      const fetchedData = await response.json();
+      this.fetchAPI();
+      console.log("success");
+    },
+    async delProduct(productID) {
+      const fetchURL = "http://localhost:4500/products/delete/" + productID;
+      const response = await fetch(fetchURL, { method: "DELETE" });
+      const fetchedData = await response.json();
+      this.fetchAPI();
+    },
+    async updateProduct(productID) {
+      const fetchURL = "http://localhost:4500/products/update/" + productID;
+      const response = await fetch(fetchURL, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(this.inputProductData),
+      });
+      const fetchedData = await response.json();
+      this.fetchAPI();
+    },
+  },
+  created() {
+    this.fetchAPI();
+  },
+};
+
+
+
+
+</script>
+
+<script setup>
+
+</script>
 
