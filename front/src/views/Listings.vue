@@ -1,6 +1,11 @@
 <template>
-<div>
+
+
    <div class="add">
+
+
+
+   <div
       <AddListing/>
    </div>
    <div v-for="item in itemList" :key="item.id"  >
@@ -17,6 +22,7 @@
 
 
 <!-- code for the add listing icon to display modal on click -->
+
 
 
 
@@ -47,9 +53,13 @@ export default {
 
 <script setup>
 
+import AddListing from '../components/listings/modal/AddListing.vue'  
+
+
 import AddListing from "../components/listings/modal/AddListing.vue"
 
 import AddListingButtonVue from '../components/listings/AddListingButton.vue';
+
 
 
 </script>
