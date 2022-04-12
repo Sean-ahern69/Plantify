@@ -129,13 +129,15 @@ export default {
     async login() {
       const response = await fetch("http://localhost:4500/users/");
       const fetchedData = await response.json();
-      this.usersData = fetchedData;
+      // this.usersData = fetchedData;
 
       if(response.status==200)
       {
         console.log("LOGIN!");
         localStorage.setItem("user-info",JSON.stringify(fetchedData[0]))
         this.$router.push({ name:'Home' })
+
+        console.log(fetchedData);
       }
     }
   },

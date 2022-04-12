@@ -149,6 +149,8 @@ export default {
         email: "",
         password: "",
         phone: "",
+        watchlist: [],
+        listings: [],
         location: ""
       },
     };
@@ -168,6 +170,7 @@ export default {
       const fetchedData = await response.json();
       this.fetchAPI();
       console.log("success");
+
 
       if(response.status==200)
       {
