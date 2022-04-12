@@ -129,7 +129,6 @@ export default {
       let result = await fetch(
         `http://localhost:4500/users?email=${this.email}&password=${this.password}`
       )
-      
     }
   },
 };
