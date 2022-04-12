@@ -21,7 +21,7 @@
         <input type="text" v-model="inputProductData.price" placeholder="Price" />
         <input type="text" style="height:100px;" v-model="inputProductData.description" placeholder="Description" />
         <input type="text" v-model="inputProductData.photo" placeholder="Photo URL" />
-        <input type="text" v-model="inputProductData.loaction" placeholder="Location" />
+        <input type="text" v-model="inputProductData.location" placeholder="Location" />
 
         <a href=""><button @click="addProduct" class="button">Add</button></a>
       </div>
@@ -170,7 +170,6 @@ export default {
         location: "",
         tags:
           {Outdoor:false, Indoor:false, FruitVeg:false, Tropical:false, Succulent:false, Easy:false, Exotic:false}
-        
       },
     };
   },

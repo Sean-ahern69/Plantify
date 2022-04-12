@@ -10,7 +10,7 @@
             v-for="(product, index) in productsData" 
             :key="product._id" 
             :ProductObject="product" 
-            :myIndex="index" />
+            :myIndex="index"/>
     </div> 
 
     <div v-if="showModal" id="modal_container">

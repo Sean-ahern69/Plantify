@@ -92,6 +92,11 @@ input {
 <script>
 
 export default {
+    tagNames:{
+    Outdoor:'Outdoor', Indoor:'Indoor', FruitVeg:'Fruit & Veg',
+    Tropical:'Tropical', Succulent:'Succulent', Easy:'Easy', Exotic:'Exotic'
+},
+
   data() {
     return {
       productsData: [],
@@ -107,6 +112,20 @@ export default {
       },
     };
   },
+  computed: {
+		filteredProducts: function() {
+			var vm = this;
+			var category = vm.selectedTags;
+			
+			if(category === "All") {
+				return vm.productsData;
+			} else {
+				return vm.product.filter(function(product) {
+					return product.tags === tags;
+				});
+			}
+		}
+	},
   methods: {
     async fetchAPI() {
       const response = await fetch("http://localhost:4500/products/");
