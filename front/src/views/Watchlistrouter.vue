@@ -1,14 +1,11 @@
 <template>
     
-
 <div>
 <h1>WATCHLIST</h1>
 
-<watchlist v-for="ID in WatchlistIDs" :key="ID" :PlantPropID="ID" />
+<watchlist v-for="PlantID in WatchlistIDs" :key="PlantID" :PlantPropID="PlantID" />
    
 </div>
-
-
 </template>
 
 <style scoped>
@@ -24,7 +21,7 @@ h1{
 export default {
   data () {
      return {
-      WatchlistIDs:'625360269c728a6114deb7e2',
+      WatchlistIDs:['625360269c728a6114deb7e2','625360269c728a6114deb7e2'],
        UserID:'6254192132479808b07ffcbe'
      }
   }

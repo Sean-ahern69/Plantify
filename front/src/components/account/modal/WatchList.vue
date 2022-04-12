@@ -1,21 +1,5 @@
 <template>
 
-<!-- function favourite_list (){
-
-if(current_fave.childNodes[1].classList.contains("full_heart") == false) {
-current_fave.childNodes[1].src= "./Images/heart.png";
-current_fave.childNodes[1].classList.toggle('full_heart');
-console.log(add_favourite.childNodes[1]);
-}
-
-else {
-current_fave.childNodes[1].src= "./Images/Artboard 2empty_heart.png";
-current_fave.childNodes[1].classList.toggle('full_heart');
-}
-} -->
-
-
-
 <div class="container">
 
        <div class="plant-box">
@@ -39,7 +23,6 @@ current_fave.childNodes[1].classList.toggle('full_heart');
 </div>
     
 </template>
-
 
 <style scoped>
 
@@ -142,14 +125,15 @@ export default {
   
   methods:{
        async fetchAPI(){
-            const response = await fetch('http://localhost:4500/products/get/'+PlantPropID);
+            const response = await fetch('http://localhost:4500/products/get/'+this.PlantPropID);
             const fetchedData = await response.json();
             this.WatchlistPlant = fetchedData;   
         }
   },
 
   created(){
-    this.fetchAPI();
+    // this.fetchAPI();
+    console.log(this.PlantPropID);
   }
 }
 
