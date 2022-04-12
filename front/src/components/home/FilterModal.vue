@@ -1,20 +1,21 @@
 <template>
 
-<div class="close_modal" ></div>
+<div>
+  <div class="close_modal" ></div>
 
     <div class="modal_bkg" >
 
-        <div class="modal_content" >
+      <div class="modal_content" >
         <h1>FILTER</h1><h2>SAVE</h2>
-        </div>
+      </div>
 
-        <div class="modal_buttons" >
+      <div class="modal_buttons" >
         <h3>Price</h3>
 
-        <div>
+      <div>
           <div class="output">
           <Slider v-model="value" />
-        </div>
+          </div>
         </div>
 
 
@@ -22,8 +23,10 @@
           <input type="text" >
       </div>
 
-    </div>
+  </div>
  
+
+</div>
 
 
 </template>
