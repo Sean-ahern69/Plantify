@@ -2,12 +2,11 @@
 
 
 
-<div>
-   <div class="add">
-      <AddListing/>
-   </div>
 
-   <div v-for="item in itemList" :key="item.id"  >
+
+
+<div>
+      <div v-for="item in itemList" :key="item.id"  >
     <!-- on click of the filter icon, check data if 'hidden' -->
  <div @click="item.isHidden = !item.isHidden"><AddListingButtonVue/></div> 
   <!--if it is, display the modal component -->
@@ -17,6 +16,26 @@
 </div>
 </div>
 
+
+  
+
+
+
+
+
+
+
+
+
+
+<!-- code for the add listing icon to display modal on click -->
+
+
+
+
+
+
+
 <!-- code for the add listing icon to display modal on click -->
 
 
@@ -25,11 +44,10 @@
 </template>
 
 <style scoped>
-.add{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
+
+
+
+
 </style>
 
 <script>
@@ -49,8 +67,13 @@ export default {
 
 <script setup>
 
-import AddListing from "../components/listings/modal/AddListing.vue"
+
+
+import AddListing from '../components/listings/modal/AddListing.vue';
+
+
 
 import AddListingButtonVue from '../components/listings/AddListingButton.vue';
+
 
 </script>
