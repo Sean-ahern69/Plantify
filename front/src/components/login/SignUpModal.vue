@@ -14,13 +14,13 @@ import userVue from "./user.vue";
           placeholder="USER NAME"
         />
         <input type="text" v-model="inputUserData.email" placeholder="EMAIL" />
-        <input type="text" placeholder="CONFIRM EMAL" />
+        <input type="text" v-model="inputUserData.phone" placeholder="PHONE" />
         <input
           type="text"
           v-model="inputUserData.password"
           placeholder="PASSWORD"
         />
-        <input type="text" placeholder="CONFIRM PASSWORD" />
+        <input type="text" v-model="inputUserData.location" placeholder="LOCATION" />
         <div id="agree">
           <input type="checkbox" id="agree">
           <label for="agree">I have read and agreed to the terms and <br>conditions.</label>
@@ -147,7 +147,9 @@ export default {
       inputUserData: {
         name: "",
         email: "",
-        password: ""
+        password: "",
+        phone: "",
+        location: ""
       },
     };
   },
@@ -166,6 +168,13 @@ export default {
       const fetchedData = await response.json();
       this.fetchAPI();
       console.log("success");
+
+      if(response.status==200)
+      {
+        console.log("Sign Up Done!");
+        localStorage.setItem("user-info",JSON.stringify(fetchedData))
+        this.$router.push({ name:'Home' })
+      }
     },
     async delUser(userID) {
       const fetchURL = "http://localhost:4500/users/delete/" + userID;
