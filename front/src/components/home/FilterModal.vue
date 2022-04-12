@@ -1,27 +1,30 @@
 <template>
 
-<div class="modal_bkg" >
+<div class="close_modal" ></div>
 
-  <div class="modal_content" >
-  <h1>FILTER</h1><h2>SAVE</h2>
-  </div>
+    <div class="modal_bkg" >
 
-<div class="modal_buttons" >
-  <h3>Price</h3>
+        <div class="modal_content" >
+        <h1>FILTER</h1><h2>SAVE</h2>
+        </div>
 
-  <div>
-    <div class="output">
-    <Slider v-model="value" />
-  </div>
-   </div>
+        <div class="modal_buttons" >
+        <h3>Price</h3>
+
+        <div>
+          <div class="output">
+          <Slider v-model="value" />
+        </div>
+        </div>
 
 
-    <h3>Location</h3>
-    <input type="text" >
-</div>
+          <h3>Location</h3>
+          <input type="text" >
+      </div>
 
+    </div>
  
-</div>
+
 
 </template>
 
@@ -45,6 +48,7 @@
 <style src="@vueform/slider/themes/default.css"></style>
 
 <style>
+
 .slider-connect{
   background: var(--slider-connect-bg,#56C596);
 
@@ -58,6 +62,16 @@
 
 <style scoped>
 
+.close_modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(26, 25, 25, 0.644);
+  z-index: 0;
+}
+
 .output {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
@@ -69,23 +83,16 @@
 
 .modal_bkg{
 
-width: 90%;
-    height: 60%;
-    background-color: white;
-   position: absolute;
-   left: 50%;
-   top: 30%; 
-   margin-left: -45%;
-   margin-top: -30%;
-       border-radius:10px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding-box;
-    background-clip: padding-box;
-    
+width: 90vw;
+  height: 40%;
+  background-color: white;
+   position: fixed;
+  left: 50%;
+  top: 63%;
+  transform: translate(-50%, -50%);
+    border-radius:10px;
+    border: 5px solid #73C088;
+ 
 }
 
 .modal_content{

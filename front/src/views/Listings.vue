@@ -1,3 +1,4 @@
+
 <template>
 
 
@@ -60,3 +61,4 @@ import AddListingButtonVue from '../components/listings/AddListingButton.vue';
 
 
 </script>
+
