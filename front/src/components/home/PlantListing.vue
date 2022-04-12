@@ -54,7 +54,6 @@
     margin: 2%;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    
 }
 .box-info{
     display: flex;
