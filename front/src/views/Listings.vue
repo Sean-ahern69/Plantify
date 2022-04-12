@@ -3,41 +3,24 @@
 
 
 
-
-
 <div>
+
+    <MyListings/>
+
+
+
+
+    <div>
       <div v-for="item in itemList" :key="item.id"  >
     <!-- on click of the filter icon, check data if 'hidden' -->
- <div @click="item.isHidden = !item.isHidden"><AddListingButtonVue/></div> 
-  <!--if it is, display the modal component -->
- <span v-if="item.isHidden" ><AddListing/></span>
- <!--if it is already displayed, hide the component (display nothing)-->
-  <span v-else></span>
+    <div @click="item.isHidden = !item.isHidden"><AddListingButtonVue/></div> 
+      <!--if it is, display the modal component -->
+    <span v-if="item.isHidden" ><AddListing/></span>
+    <!--if it is already displayed, hide the component (display nothing)-->
+      <span v-else></span>
+    </div>
+    </div>
 </div>
-</div>
-
-
-  
-
-
-
-
-
-
-
-
-
-
-<!-- code for the add listing icon to display modal on click -->
-
-
-
-
-
-
-
-<!-- code for the add listing icon to display modal on click -->
-
 
 
 
@@ -71,7 +54,7 @@ export default {
 
 import AddListing from '../components/listings/modal/AddListing.vue';
 
-
+import MyListings from "../components/listings/MyListings.vue"
 
 import AddListingButtonVue from '../components/listings/AddListingButton.vue';
 

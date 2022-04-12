@@ -91,7 +91,6 @@
     background-color: #CBEAD1;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    max-height: 20vh;
 }
 </style>
 

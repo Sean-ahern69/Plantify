@@ -27,7 +27,7 @@
 
 
 <script>
-  import Slider from '@vueform/slider'
+  import Slider from '@vueform/slider';
 
   export default {
     components: {
