@@ -4,7 +4,7 @@
 
        <div class="plant-box">
             <div class="plant-img-div">
-                <div @click="ProductObject._id" class="heart-icon" ><img src="../../../assets/emptyheart.png" alt=""></div>
+                <div class="heart-icon" ><img src="../../../assets/emptyheart.png" alt=""></div>
                 <img class="plant-img" v-bind:src="'https:'+'//images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8&w=1000&q=80'" /> 
             </div>
             
@@ -21,6 +21,8 @@
 
         
 </div>
+
+<span>{{WatchlistPlant}}</span>
     
 </template>
 
@@ -107,7 +109,7 @@
 <script setup>
 defineProps({
   PlantPropID: {
-    type: string,
+    type: String,
     required: true,
   }
 })
@@ -132,8 +134,7 @@ export default {
   },
 
   created(){
-    // this.fetchAPI();
-    console.log(this.PlantPropID);
+    this.fetchAPI();
   }
 }
 

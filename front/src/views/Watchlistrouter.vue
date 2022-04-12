@@ -21,7 +21,7 @@ h1{
 export default {
   data () {
      return {
-      WatchlistIDs:['625360269c728a6114deb7e2','625360269c728a6114deb7e2'],
+      WatchlistIDs:['62535638a3fa466b9506b441','62535f559c728a6114deb7cf','62535fdb9c728a6114deb7dc'],
        UserID:'6254192132479808b07ffcbe'
      }
   }
