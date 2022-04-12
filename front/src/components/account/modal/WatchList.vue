@@ -22,7 +22,7 @@
         
 </div>
 
-<span>{{WatchlistPlant}}</span>
+<!-- <span>{{WatchlistPlant}}</span> -->
     
 </template>
 
@@ -39,7 +39,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap:unset;
+    flex-direction: row; 
+
 }
 
 .intials{
@@ -59,12 +61,12 @@
 }
 .plant-box{
     display: flex;
-    flex-direction: column;
-    width: 40%;
+    flex-direction: row;
     border-radius: 10px;
-    margin: 1%;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    flex-wrap:wrap;
+    flex-basis: 50%;
 
 }
 .box-info{
