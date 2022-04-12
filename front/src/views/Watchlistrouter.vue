@@ -3,12 +3,25 @@
 <div>
 <h1>WATCHLIST</h1>
 
+<div class="container" >
 <watchlist v-for="PlantID in WatchlistIDs" :key="PlantID" :PlantPropID="PlantID" />
+</div>
    
 </div>
 </template>
 
 <style scoped>
+
+ .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+
 h1{
      font-family: 'Poppins';
     font-weight: 600;
