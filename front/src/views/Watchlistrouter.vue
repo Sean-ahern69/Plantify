@@ -5,7 +5,7 @@
 
 
 <div class="container" >
-<watchlist v-for="PlantID in UserObject.watchlist" :key="PlantID" :PlantPropID="PlantID" :thisUserID="UserID" />
+<watchlist v-for="PlantID in UserObject.watchlist" :key="PlantID" :PlantPropID="PlantID" />
 </div>
 
 </div>
@@ -33,7 +33,6 @@ h1{
 export default {
   data () {
      return {
-      WatchlistIDs:['62535638a3fa466b9506b441','62535f559c728a6114deb7cf','62535fdb9c728a6114deb7dc'],
        UserID:'6256025d7fbd79c629a9cb20',   //CHANGE this user ID to show up specific users watchlist
        UserObject:{}
      }

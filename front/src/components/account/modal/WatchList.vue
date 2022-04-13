@@ -1,11 +1,10 @@
 <template>
 
-<h1></h1>
-
-    <div class="plant-box">
-        
-        <div class="plant-img">
-             <div class="empty_heart heart_icon" @click="heartfunction()" ></div>
+ 
+    <div class="plant-box" >
+       <div :class="{hidden:ishidden}" >
+        <div class="plant-img"  >
+             <div class="empty_heart heart_icon" @click="heartfunction()" :class="{full_heart:inwatchlist}" ></div>
             <img :src="WatchlistPlant.photo">
         </div>
         <div class="box-info">
@@ -16,6 +15,9 @@
                 <h1>{{WatchlistPlant.name}}</h1>
                 <h3>${{WatchlistPlant.price}}</h3>
             </div>
+
+
+        </div>
 
         </div>
     </div>
@@ -30,6 +32,11 @@
     position: absolute;
     
 }
+
+.hidden{
+    display: none;
+}
+
 .empty_heart{
     background-image: url("../../../assets/emptyheart.png") ;
  background-repeat: no-repeat;
@@ -74,6 +81,7 @@
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     position: relative;
+  
     
 }
 .box-info{
@@ -121,11 +129,7 @@ defineProps({
   PlantPropID: {
     type: String,
     required: true,
-  },
-    thisUserID: {
-    type: String,
-    required: true
-    }
+  }
 })
 </script>
 
@@ -135,7 +139,9 @@ export default {
   data () {
      return {
        WatchlistPlant:{},
-       UserObject:{}
+       UserObject:{},
+       inwatchlist: true,
+       ishidden:false
 
      }
   },
@@ -147,21 +153,43 @@ export default {
             this.WatchlistPlant = fetchedData;   
         },
             async getUserbyID(){
-            const response = await fetch('http://localhost:4500/users/get/'+this.UserID);
+            const response = await fetch('http://localhost:4500/users/get/6256025d7fbd79c629a9cb20');
             const fetchedData = await response.json();
             this.UserObject = fetchedData; 
             },
 
-        heartfunction(){
-            this.getUserbyID();
-            console.log(UserObject)
-// push this.this.PlantPropID into the UserID.watchlist array
+        heartfunction(item){
+    if ((this.UserObject.watchlist.includes(this.PlantPropID)) === true) {
+        this.inwatchlist = false;
+        this.ishidden = true;
+        console.log(this.inwatchlist);
+         console.log(this.ishidden);
+        // console.log('function returns true');
+        // this.UserObject.watchlist.push(this.PlantPropID);
+
+        // const newarray = this.UserObject.watchlist.filter((item) =>item !== this.PlantPropID)
+        // console.log(newarray);
+        // newarray = this.UserObject.watchlist;
+
+        // const removeItem = (arr,item) =>{
+        //     let newarray = [...arr];
+        //     const index = newarray.findIndex((element)=> element === item);
+        //     if(index !== -1){
+        //         newarray.splice(index,1)
+        //         return newarray
+        //     }
+        // }
+        // console.log(removeItem(this.UserObject.watchlist,this.PlantPropID))
+    }
+
+
+// push this.this.PlantPropID into the UserID.watchlist array if it isn't already in it
         }
   },
 
   created(){
     this.fetchAPI();
-    
+    this.getUserbyID();
   }
 }
 
