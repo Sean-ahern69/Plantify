@@ -1,7 +1,7 @@
 <template>
     
 <div>
-<h1>WATCHLIST</h1>
+<h1 class="h1_space" >WATCHLIST</h1>
 
 
 <div class="container" >
@@ -18,13 +18,16 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-}
 
+}
+.h1_space{
+    margin-top: 20px;
+}
 
 h1{
      font-family: 'Poppins';
     font-weight: 600;
-    color: #329D9C;
+    color:     darkcyan;;
     text-align: center;
 }
 </style>

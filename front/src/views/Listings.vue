@@ -39,7 +39,7 @@
 h1{
      font-family: 'Poppins';
     font-weight: 600;
-    color: #329D9C;
+    color:     darkcyan;;
     text-align: center;
 }
 
@@ -50,6 +50,7 @@ h1{
     flex-wrap: wrap;
     width: 100%;
     z-index: -2;
+    margin-top: 20px;
 
 }
 

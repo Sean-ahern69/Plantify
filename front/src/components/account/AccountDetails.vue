@@ -6,7 +6,7 @@ import userVue from '../login/user.vue';
 
 <template>
   <div class="page_title">
-    MY ACCOUNT 
+    <h1>MY ACCOUNT</h1>  
   </div>  
 
   <div class="container">
@@ -76,16 +76,12 @@ export default {
 
 <style scoped>
 
-.page_title{
+.page_title h1{
   font-family: "Poppins", sans-serif;
-  margin-top: 30px;
+  margin-top: 20px;
     text-align: center;
-    font-size: 17px;
-    font-weight: bold;
-    color: #329D9C;
-    padding: 16px 0;
-    border-bottom: 1px solid #CBEAD1;
-    letter-spacing: 3px;
+    font-weight: 600;
+    color: darkcyan;
 }
 
 .container {

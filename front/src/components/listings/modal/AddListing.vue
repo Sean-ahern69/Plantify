@@ -16,7 +16,8 @@
 
         <input type="text" v-model="inputProductData.name" placeholder="Title" />
         <hr class="line2" size="1" top="50px" width="98.8181%" color="#CBEAD1">
-        <input type="text" style="height:20px;" v-model="inputProductData.description" placeholder="Tags" />
+        <div class="tags_title" >tags</div>
+        <!-- <input type="text" style="height:20px;" v-model="inputProductData.description" placeholder="Tags" /> -->
 
         <div class="container">
         <div class="tags">
@@ -31,10 +32,15 @@
     </div>
 
         <hr class="line3" size="1"  width="98.8181%" color="#CBEAD1">
-        <input type="text" v-model="inputProductData.photo" placeholder="$ Price" />
+        <input type="text" v-model="inputProductData.price" placeholder="$ Price" />
+         <hr class="line4" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+        <input type="text" v-model="inputProductData.photo" placeholder="Photo URL" />
         <hr class="line4" size="1" top="50px" width="98.8181%" color="#CBEAD1">
-        <input type="text" v-model="inputProductData.loaction" placeholder="Description here" />
+                <input type="text" v-model="inputProductData.location" placeholder="Location" />
         <hr class="line5" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+        <input type="text" v-model="inputProductData.description" placeholder="Description here" />
+        <hr class="line5" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+
         <div><button @click="addProduct" class="button"><h3>ADD</h3></button></div>
       </div>
 </div>
@@ -104,7 +110,7 @@ div{
     h1{
      font-family: 'Poppins';
     font-weight: 600;
-    color: #329D9C;
+    color:darkcyan;
     text-align: center;
 }
 
@@ -168,6 +174,16 @@ input {
   border: 1px solid #ffffff;
 }
 
+.tags_title{
+    height: 30px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  color: #cbead1;
+   font-family: 'poppins';
+   font-size: .8em;
+
+}
+
 ::placeholder {
   color: #cbead1;
 
@@ -222,6 +238,7 @@ export default {
       const fetchedData = await response.json();
       this.fetchAPI();
       console.log("success");
+      this.$router.push('/Home');
     },
     async delProduct(productID) {
       const fetchURL = "http://localhost:4500/products/delete/" + productID;
