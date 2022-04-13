@@ -1,5 +1,6 @@
+
 <template>
-<div>
+<div class="background">
 
     <Tags/>
     <PlantContainer/>
@@ -26,11 +27,23 @@
 </template>
 
 <style scoped>
-
+.background{
+  padding-bottom: 40%;
+}
 </style>
 
 <script>
-
+export default{
+  data(){
+    return{
+        itemList: [{
+        "id": 1,
+        "isHidden": false
+      },
+    ],
+    }
+  }
+}
 </script>
 
 <script setup>

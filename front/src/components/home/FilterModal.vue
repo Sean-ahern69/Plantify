@@ -1,48 +1,101 @@
 <template>
 
-<div class="modal_bkg" >
+<div>
+  <div class="close_modal" ></div>
 
-  <div class="modal_content" >
-  <h1>FILTER</h1><h2>SAVE</h2>
+    <div class="modal_bkg" >
+
+      <div class="modal_content" >
+        <h1>FILTER</h1><h2>SAVE</h2>
+      </div>
+
+      <div class="modal_buttons" >
+        <h3>Price</h3>
+
+      <div>
+          <div class="output">
+          <Slider v-model="value" />
+          </div>
+        </div>
+
+
+          <h3>Location</h3>
+          <input type="text" >
+      </div>
+
   </div>
-
-<div class="modal_buttons" >
-  <h3>Price</h3>
-  <input type="range" name="distanceInputName" id="distanceInputId" value="0" min="0" max="500">
-    <output>24</output>
-    <h3>Location</h3>
-    <input type="text" >
-</div>
-
  
-</div>
 
+</div>
 
 
 </template>
 
 
+<script>
+  import Slider from '@vueform/slider';
+
+  export default {
+    components: {
+      Slider,
+    },
+    data() {
+      return {
+        value: 20
+      }
+    }
+  }
+</script>
+
+
+<style src="@vueform/slider/themes/default.css"></style>
+
+<style>
+
+.slider-connect{
+  background: var(--slider-connect-bg,#56C596);
+
+}
+
+.slider-tooltip{
+  background: var(--slider-tooltip-bg,#56C596);
+  border: 1px solid var(--slider-tooltip-bg,#56C596);
+}
+</style>
+
 <style scoped>
+
+.close_modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(26, 25, 25, 0.644);
+  z-index: 0;
+}
+
+.output {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  
+}
 
 .modal_bkg{
 
-width: 90%;
-    height: 60%;
-    background-color: white;
-   position: absolute;
-   left: 50%;
-   top: 30%; 
-   margin-left: -45%;
-   margin-top: -30%;
-       border-radius:10px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding-box;
-    background-clip: padding-box;
-    
+width: 90vw;
+  height: 40%;
+  background-color: white;
+   position: fixed;
+  left: 50%;
+  top: 63%;
+  transform: translate(-50%, -50%);
+    border-radius:10px;
+    border: 5px solid #73C088;
+ 
 }
 
 .modal_content{
@@ -77,35 +130,6 @@ h3{
     
 }
 
-input[type=range] {
-    height: 25px;
-    -webkit-appearance: none;
-    margin: 10px 0;
-    width: 100%;
-  }
-
-  input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 5px;
-    cursor: pointer;
-    animation: 0.2s;
-    box-shadow: 0px 0px 0px #000000;
-    background: #b6d7d7;
-    border-radius: 1px;
-    border: 0px solid #000000;
-  }
-  input[type=range]::-webkit-slider-thumb {
-    box-shadow: 0px 0px 0px #000000;
-    border: 1px solid #329D9C;
-    height: 18px;
-    width: 18px;
-    border-radius: 25px;
-    background: #329D9C;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -7px;
-  }
- 
  
 
 

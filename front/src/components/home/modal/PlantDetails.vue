@@ -3,15 +3,15 @@
     <div class="container">
         <div class="plant">
             <div class="tags">
-                <h3>Indoor / Large</h3>
+                <h3>{{ProductObject.tags}}</h3>
                 <img :src="hearticon">
             </div>
             <div class="title">
-                <h1>Peace Lily</h1>
+                <h1>{{ProductObject.name}}</h1>
             </div>
             <div class="info">
-                <p>The peace lily is one of the most popular, hardiest and potentially most beautiful of the indoor plants. They offer the best of both worlds: beautiful foliage year-round and gorgeous, generally pure white, flowers over a long period.</p>
-               <br> <p>Location:</p>
+                <p>{{ProductObject.description}}</p>
+               <br> <p>Location: {{ProductObject.location}}</p>
                <p>Pick up only</p>
             </div>
         </div>
@@ -163,12 +163,19 @@ export default {
   data: function() {
     return {
       hearticon: './src/assets/asset 2.png',
-      sendicon: './src/assets/Group 28.png'
+      sendicon: './src/assets/Group 28.png',
+      comment:''
     }
   }
 }
 </script>
 
 <script setup>
-
+defineProps({
+  ProductObject: {
+    type: Object,
+    required: true
+  }
+})
 </script>
+

@@ -1,39 +1,35 @@
 <template>
-<div class="container">
+
 
         <!-- <span>{{ProductObject}}</span> -->
-        <span>{{myIndex}}</span>
-       <div class="plant-box">
+        <!-- <span>{{myIndex}}</span> -->
+    <div class="plant-box">
         <div class="plant-img">
             <img :src="ProductObject.photo">
         </div>
-            <div class="box-info">
-                <div class="intials">
-                    <h4>KJ</h4>
-                </div>
-                <div class="box-price">
-                    <h1>{{ProductObject.name}}</h1>
-                    <h3>${{ProductObject.price}}</h3>
-                </div>
+        <div class="box-info">
+            <div class="intials">
+                <h4>KJ</h4>
+            </div>
+            
+            <div class="box-price">
+                <h1>{{ProductObject.name}}</h1>
+                <h3>${{ProductObject.price}}</h3>
+            </div>
 
-             </div>
         </div>
+    </div>
+        
         
 
 
 
-</div>
+
 
 </template>
 
 <style scoped>
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
 
 .intials{
     background-color: #F4BBBB;
@@ -54,9 +50,9 @@
 .plant-box{
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 45%;
     border-radius: 10px;
-    margin: 1%;
+    margin: 2%;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     
@@ -78,7 +74,7 @@
 .plant-box h1{
     color: darkcyan;
     margin: 0;
-    font-size: 1em;
+    font-size: .8em;
 }
 
 .plant-box h3{
@@ -94,6 +90,8 @@
 
 .plant-img{
     background-color: #CBEAD1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 </style>
 

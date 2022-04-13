@@ -5,42 +5,37 @@
       <div class="input_container">
         <input type="text" v-model="email" placeholder="Email" />
         <input type="passworld" v-model="password" placeholder="Password" />
-        
-        <router-link to="/Home" class="button">LOG IN</router-link>
+
+        <!-- <router-link to="/Home" class="button">LOG IN</router-link> -->
+        <button class="button" @click="login">LOG IN</button>
 
         <p>Don't have account? <a @click="showModal = true">SIGN UP</a></p>
       </div>
     </div>
 
     <div v-if="showModal" id="modal_container">
-        <SignUpModal />
-        <p id="closeModal">Already have account? <a @click="showModal = false">LOG IN</a></p>
+      <SignUpModal @closeModalEmit="showModal = false" />
     </div>
-    
-      <!-- <button @click="showModal = false">Close</button> -->
-    
 
     <h2>PLANTIFY</h2>
   </div>
 </template>
 
 <style scoped>
-
 #modal_container {
-    position: fixed;
-    top:0;
-    left:0;
-    background: white;
-    height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 100vh;
 }
 
-
 #closeModal {
-    position: fixed;
-    bottom: 20%;
-    left: 30%;
-    background: white;
-    padding: 10px;
+  position: fixed;
+  bottom: 20%;
+  left: 30%;
+  background: white;
+  padding: 10px;
 }
 
 .container {
@@ -59,10 +54,10 @@
   text-align: center;
   background: white;
   padding: 50px 30px;
-  height: 250px;
 }
 
 h1 {
+  font-family: "Poppins", sans-serif;
   font-size: 34px;
   letter-spacing: 5px;
   color: #329d9c;
@@ -80,7 +75,7 @@ input {
   border-radius: 8px;
   border: 1px solid #cbead1;
   padding-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 ::placeholder {
@@ -89,7 +84,6 @@ input {
 
 .button {
   padding: 10px;
-  margin-top: 10px;
   background: #73c088;
   color: white;
   border: none;
@@ -98,7 +92,7 @@ input {
 
 p {
   color: #a8a8a8;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 a {
@@ -111,8 +105,7 @@ h2 {
   font-size: 17px;
   letter-spacing: 10px;
   color: #329d9c;
-  position: absolute;
-  bottom: 130px;
+  padding-top: 50px;
 }
 </style>
 
@@ -129,16 +122,24 @@ export default {
       email: "",
       password: "",
       showModal: false,
-      url:"../views/Home.vue"
+      url:"../views/Home.vue",
     };
   },
   methods: {
     async login() {
-      let result = await fetch(
-        `http://localhost:4500/users?email=${this.email}&password=${this.password}`
-      );
-      console.log(result);
-    },
+      const response = await fetch("http://localhost:4500/users/");
+      const fetchedData = await response.json();
+      // this.usersData = fetchedData;
+
+      if(response.status==200)
+      {
+        console.log("LOGIN!");
+        localStorage.setItem("user-info",JSON.stringify(fetchedData[0]))
+        this.$router.push({ name:'Home' })
+
+        console.log(fetchedData);
+      }
+    }
   },
 };
 </script>
