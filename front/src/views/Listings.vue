@@ -6,9 +6,7 @@
 
   <h1>LISTINGS</h1>
 
-    <div class="container" >
-    <MyListings v-for="PlantID in UserObject.listings" :key="PlantID" :PlantPropID="PlantID" />
-    </div>
+    
 
 
     <div>
@@ -21,6 +19,12 @@
       <span v-else></span>
     </div>
     </div>
+
+
+    <div class="container" >
+    <MyListings v-for="PlantID in UserObject.listings" :key="PlantID" :PlantPropID="PlantID" />
+    </div>
+
 </div>
 
 

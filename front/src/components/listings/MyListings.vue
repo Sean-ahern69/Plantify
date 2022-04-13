@@ -5,7 +5,7 @@
 <div class="plant-box">
 
       <div class="plant-box-child plant-box-child-1">
-        <img src="../../assets/PeaceLily.png" alt="" class="plant-img">
+         <img :src="mylistingplant.photo" class="plant-img">
       </div>
 
       <div class="popular-card plant-box-child plant-box-child-2">
