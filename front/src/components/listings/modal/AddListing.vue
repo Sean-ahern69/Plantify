@@ -15,19 +15,12 @@
 
       
    <hr class="line" size="1" top="101px" width="109%" color="#CBEAD1">
+        <a href=""><button @click="addProduct" class="button" style="background-color:#ffffff">Add</button></a>
+        <input type="text" v-model="inputProductData.name" placeholder="Title" />
+        <hr class="line2" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+        <input type="text" style="height:20px;" v-model="inputProductData.description" placeholder="Tags" />
 
-        <input type="text" v-model="inputProductData.name" placeholder="Name" />
-        <input type="text" v-model="inputProductData.price" placeholder="Price" />
-        <input type="text" style="height:100px;" v-model="inputProductData.description" placeholder="Description" />
-        <input type="text" v-model="inputProductData.photo" placeholder="Photo URL" />
-        <input type="text" v-model="inputProductData.loaction" placeholder="Location" />
-
-        <a href=""><button @click="addProduct" class="button">Add</button></a>
-      </div>
-
-
-
-     <div class="container">
+        <div class="container">
         <div class="tags">
             <div class="tag_style" @click="inputProductData.tags.Indoor= !inputProductData.tags.Indoor" :class="{tag_true:inputProductData.tags.Indoor}"><h3>Indoor</h3></div> 
             <div class="tag_style" @click="inputProductData.tags.Outdoor= !inputProductData.tags.Outdoor" :class="{tag_true:inputProductData.tags.Outdoor}"><h3>Outdoor</h3></div>
@@ -38,6 +31,12 @@
             <div class="tag_style" @click="inputProductData.tags.Exotic= !inputProductData.tags.Exotic" :class="{tag_true:inputProductData.tags.Exotic}"><h3>Exotic</h3></div>
         </div>
     </div>
+        <hr class="line3" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+        <input type="text" v-model="inputProductData.photo" placeholder="$ Price" />
+        <hr class="line4" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+        <input type="text" v-model="inputProductData.loaction" placeholder="Description here" />
+        <hr class="line5" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+      </div>
 </div>
 
 </template>
@@ -52,9 +51,46 @@ div.container{
 }
 hr.line{
   margin-top: 41px;
-  margin-bottom: 30px;
+  margin-bottom: 1px;
   margin-right: -17.5px;
   margin-left: -17.5px;
+}
+.button {
+  background-color: #ffffff; /* Green */
+  border-color: #4CAF50;
+  color: #4CAF50;
+  padding: 50px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position: absolute;
+  top: 120px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-left: 100px;
+  border-radius:1em;
+}
+
+hr.line2{
+  margin-top: 150px;
+  margin-bottom: 1px;
+  margin-right: 30px;
+}
+hr.line3{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-right: 30px;
+}
+hr.line4{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-right: 30px;
+}
+hr.line5{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-right: 30px;
 }
 img{
     height: 17.5px;
@@ -122,7 +158,7 @@ h2{
 .input_container {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 20px;
  
   padding-left: 20px;
   padding-right: 20px;
@@ -133,7 +169,7 @@ input {
   /*width: 290px;*/
   height: 30px;
   border-radius: 8px;
-  border: 1px solid #cbead1;
+  border: 1px solid #ffffff;
 }
 
 ::placeholder {
