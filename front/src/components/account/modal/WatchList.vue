@@ -151,6 +151,7 @@ export default {
             const response = await fetch('http://localhost:4500/products/get/'+this.PlantPropID);
             const fetchedData = await response.json();
             this.WatchlistPlant = fetchedData;   
+            
         },
             async getUserbyID(){
             const response = await fetch('http://localhost:4500/users/get/6256025d7fbd79c629a9cb20');

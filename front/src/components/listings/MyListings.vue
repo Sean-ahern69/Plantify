@@ -1,7 +1,6 @@
 <template>
-<div class="head">
 
-</div>
+
 
 <div class="plant-box">
 
@@ -10,16 +9,16 @@
       </div>
 
       <div class="popular-card plant-box-child plant-box-child-2">
-            <h2>PEACE LILY</h2>
-            <h3>$35</h3>
-            <div class="status" >Status: Sold</div>
+            <h2>{{mylistingplant.name}}</h2>
+            <h3>${{mylistingplant.price}}</h3>
+            <div class="status" >Status: LISTED</div>
             
       </div>
 
       <div class="edit-icons plant-box-child plant-box-child-3">
-         <img src="../../assets/pencil.png" alt="" width="20px">
+         <img src="../../assets/pencil.png" alt="" >
 
-         <img src="../../assets/greenx.png" alt="" width="20px">
+         <img src="../../assets/greenx.png" alt="" >
       </div>
 
 
@@ -43,6 +42,10 @@
 .edit-icons{
   display: flex;
   padding-right: 5px;
+}
+
+.edit-icons img{
+  width:20px;
 }
 
 .plant-box-child-1{
@@ -99,9 +102,32 @@
 </style>
 
 <script>
+export default{
+  data (){
+    return {
+      mylistingplant:{}
+    }
+  },
+    methods:{
+       async fetchAPI(){
+            const response = await fetch('http://localhost:4500/products/get/'+this.PlantPropID);
+            const fetchedData = await response.json();
+            this.mylistingplant = fetchedData; 
+              
+       }
+    },
+    created(){
+    this.fetchAPI();
+  }
+}
 
 </script>
 
 <script setup>
-
+defineProps({
+  PlantPropID: {
+    type: String,
+    required: true,
+  }
+})
 </script>
