@@ -6,8 +6,11 @@
 
 <div>
 
-    <MyListings/>
+  <h1>LISTINGS</h1>
 
+    <div class="container" >
+    <MyListings/>
+    </div>
 
 
 
@@ -28,8 +31,20 @@
 </template>
 
 <style scoped>
+h1{
+     font-family: 'Poppins';
+    font-weight: 600;
+    color: #329D9C;
+    text-align: center;
+}
 
-
+ .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
 
 
 </style>
