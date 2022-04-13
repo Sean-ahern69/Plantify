@@ -4,26 +4,26 @@
 
 <div>
 
-  <h1>LISTINGS</h1>
-
-    
 
 
-    <div>
+    <div class="container" v-if="!isHidden" >
+      <h1>LISTINGS</h1>
+    <MyListings v-for="PlantID in UserObject.listings" :key="PlantID" :PlantPropID="PlantID"/>
+    </div>
+
+
+   <div>
       <div v-for="item in itemList" :key="item.id"  >
     <!-- on click of the filter icon, check data if 'hidden' -->
-    <div @click="item.isHidden = !item.isHidden"><AddListingButtonVue/></div> 
+    <div @click="isHidden = !isHidden"><AddListingButtonVue class="add_listing_button" /></div> 
       <!--if it is, display the modal component -->
-    <span v-if="item.isHidden" ><AddListing/></span>
+    <span v-if="isHidden" ><AddListing class="add_listing" /> </span>
     <!--if it is already displayed, hide the component (display nothing)-->
       <span v-else></span>
     </div>
     </div>
 
-
-    <div class="container" >
-    <MyListings v-for="PlantID in UserObject.listings" :key="PlantID" :PlantPropID="PlantID" />
-    </div>
+ 
 
 </div>
 
@@ -32,6 +32,10 @@
 </template>
 
 <style scoped>
+.hidden{
+  display: none;
+}
+
 h1{
      font-family: 'Poppins';
     font-weight: 600;
@@ -45,9 +49,17 @@ h1{
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
+    z-index: -2;
+
 }
 
+.add_listing{
+   z-index: 100;
+}
 
+.add_listing_button{
+  z-index: 500;
+}
 </style>
 
 <script>
@@ -57,8 +69,10 @@ export default {
        itemList: [{
         "id": 1,
         "isHidden": false
-      },
+      }
+     
     ],
+     isHidden: false,
       UserID:'6256025d7fbd79c629a9cb20', 
        UserObject:{}
      }

@@ -4,19 +4,16 @@
 <div class="container_box">
 
 
-   <div id="square">
-       <square width="190px" height="190px"></square>
-    </div> 
-
       <div class="input_container">
 
       <div>
-        <img src="../../../assets/cross.png"><h1>LISTING</h1><h2>SAVE</h2>
+        <img src="../../../assets/cross.png"><h1>ADD A LISTING</h1><h2>SAVE</h2>
       </div>
 
       
    <hr class="line" size="1" top="101px" width="109%" color="#CBEAD1">
-        <a href=""><button @click="addProduct" class="button" style="background-color:#ffffff">Add</button></a>
+
+
         <input type="text" v-model="inputProductData.name" placeholder="Title" />
         <hr class="line2" size="1" top="50px" width="98.8181%" color="#CBEAD1">
         <input type="text" style="height:20px;" v-model="inputProductData.description" placeholder="Tags" />
@@ -32,11 +29,13 @@
             <div class="tag_style" @click="inputProductData.tags.Exotic= !inputProductData.tags.Exotic" :class="{tag_true:inputProductData.tags.Exotic}"><h3>Exotic</h3></div>
         </div>
     </div>
-        <hr class="line3" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+
+        <hr class="line3" size="1"  width="98.8181%" color="#CBEAD1">
         <input type="text" v-model="inputProductData.photo" placeholder="$ Price" />
         <hr class="line4" size="1" top="50px" width="98.8181%" color="#CBEAD1">
         <input type="text" v-model="inputProductData.loaction" placeholder="Description here" />
         <hr class="line5" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+        <div><button @click="addProduct" class="button"><h3>ADD</h3></button></div>
       </div>
 </div>
 
@@ -44,12 +43,9 @@
 
 <style scoped>
 .container_box{
-flex-direction: column;
+background-color: white;
 }
-div.container{
-  /*margin-right: 20px;
-  margin-left: 20px;*/
-}
+
 hr.line{
   margin-top: 41px;
   margin-bottom: 1px;
@@ -57,24 +53,25 @@ hr.line{
   margin-left: -17.5px;
 }
 .button {
-  background-color: #ffffff; /* Green */
-  border-color: #4CAF50;
-  color: #4CAF50;
-  padding: 50px 50px;
+  all: unset;
+color: #4CAF50;
+  background-color: #CBEAD1;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 16px;
-  position: absolute;
-  top: 120px;
+  /* position: absolute; */
+  top: 150px;
   padding-right: 50px;
   padding-left: 50px;
   margin-left: 100px;
-  border-radius:1em;
+  margin-top: 10px;
+  border-radius:3px;
+    font-family: 'Poppins';
 }
 
 hr.line2{
-  margin-top: 150px;
+
   margin-bottom: 1px;
   margin-right: 30px;
 }
@@ -100,19 +97,18 @@ img{
 div{
     display: flex;
     justify-content: space-between;
-    /*padding-top: 61px;*/
-    padding-bottom: ;
+    
 
 }
-h1{
+
+    h1{
+     font-family: 'Poppins';
+    font-weight: 600;
     color: #329D9C;
-    background: #FFFFFF;
-    justify-content: space-between;
-    font-family: 'Poppins';
-    letter-spacing: 0.28em;
-    font-size: 106.25%;
-
+    text-align: center;
 }
+
+
 
 h2{
     color: #73C088;
@@ -160,7 +156,6 @@ h2{
   display: flex;
   flex-direction: column;
   margin-top: 20px;
- 
   padding-left: 20px;
   padding-right: 20px;
 
