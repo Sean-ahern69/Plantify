@@ -1,47 +1,52 @@
 <template>
 
-<div class="container">
+<h1></h1>
 
-       <div class="plant-box">
-            <div class="plant-img-div">
-                <div class="heart-icon" ><img src="../../../assets/emptyheart.png" alt=""></div>
-                <img class="plant-img" v-bind:src="'https:'+'//images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhbnR8ZW58MHx8MHx8&w=1000&q=80'" /> 
-            </div>
-            
-            <div class="box-info">
-                <div class="intials">
-                    <h4>KJ</h4>
-                </div>
-                <div class="box-price">
-                    <h1>{{WatchlistPlant.name}}</h1>
-                    <h3>${{WatchlistPlant.price}}</h3>
-                </div>
-             </div>
-        </div>
-
+    <div class="plant-box">
         
-</div>
+        <div class="plant-img">
+             <div class="empty_heart heart_icon" @click="heartfunction()" ></div>
+            <img :src="WatchlistPlant.photo">
+        </div>
+        <div class="box-info">
+            <div class="intials">
+                <h4>KJ</h4>
+            </div>
+            <div class="box-price">
+                <h1>{{WatchlistPlant.name}}</h1>
+                <h3>${{WatchlistPlant.price}}</h3>
+            </div>
 
-<!-- <span>{{WatchlistPlant}}</span> -->
-    
+        </div>
+    </div>
+
+   
 </template>
 
 <style scoped>
-
-.heart-icon{
+.heart_icon{
+    width: 70px;
+    height: 70px;
     position: absolute;
-    right: 2%;
+    
+}
+.empty_heart{
+    background-image: url("../../../assets/emptyheart.png") ;
+ background-repeat: no-repeat;
+ 
 }
 
+.full_heart{
+    background-image: url("../../../assets/fullheart.png") ;
+ background-repeat: no-repeat;
+ 
+}
 
-
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap:unset;
-    flex-direction: row; 
-
+.heart_icon{
+    position: absolute;
+    width: 70px;
+    right: 0;
+    
 }
 
 .intials{
@@ -59,15 +64,17 @@
     font-weight: 200;
     margin-left: 12px;
 }
+
 .plant-box{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 45%;
     border-radius: 10px;
+    margin: 2%;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    flex-wrap:wrap;
-    flex-basis: 50%;
-
+    position: relative;
+    
 }
 .box-info{
     display: flex;
@@ -86,7 +93,7 @@
 .plant-box h1{
     color: darkcyan;
     margin: 0;
-    font-size: 1em;
+    font-size: .8em;
 }
 
 .plant-box h3{
@@ -95,14 +102,15 @@
     font-weight: 400;
 }
 
-.plant-img{
+.plant-img img{
     width: 100%;
+    height: 100%;
 }
 
-
-.plant-img-div{
+.plant-img{
     background-color: #CBEAD1;
-    position: relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 
@@ -113,7 +121,11 @@ defineProps({
   PlantPropID: {
     type: String,
     required: true,
-  }
+  },
+    thisUserID: {
+    type: String,
+    required: true
+    }
 })
 </script>
 
@@ -122,7 +134,8 @@ defineProps({
 export default {
   data () {
      return {
-       WatchlistPlant:{}
+       WatchlistPlant:{},
+       UserObject:{}
 
      }
   },
@@ -132,11 +145,23 @@ export default {
             const response = await fetch('http://localhost:4500/products/get/'+this.PlantPropID);
             const fetchedData = await response.json();
             this.WatchlistPlant = fetchedData;   
+        },
+            async getUserbyID(){
+            const response = await fetch('http://localhost:4500/users/get/'+this.UserID);
+            const fetchedData = await response.json();
+            this.UserObject = fetchedData; 
+            },
+
+        heartfunction(){
+            this.getUserbyID();
+            console.log(UserObject)
+// push this.this.PlantPropID into the UserID.watchlist array
         }
   },
 
   created(){
     this.fetchAPI();
+    
   }
 }
 
