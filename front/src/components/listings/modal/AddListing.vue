@@ -1,35 +1,24 @@
-
-
-<template>
+-<template>
 
 <div class="container_box">
 
 
-   <div id="square">
-       <square width="190px" height="190px"></square>
-    </div> 
-
       <div class="input_container">
 
       <div>
-        <img src="../../../assets/cross.png"><h1>LISTING</h1><h2>SAVE</h2>
+        <img src="../../../assets/cross.png"><h1>ADD A LISTING</h1><h2>SAVE</h2>
       </div>
 
       
    <hr class="line" size="1" top="101px" width="109%" color="#CBEAD1">
 
-        <input type="text" v-model="inputProductData.name" placeholder="Name" />
-        <input type="text" v-model="inputProductData.price" placeholder="Price" />
-        <input type="text" style="height:100px;" v-model="inputProductData.description" placeholder="Description" />
-        <input type="text" v-model="inputProductData.photo" placeholder="Photo URL" />
-        <input type="text" v-model="inputProductData.location" placeholder="Location" />
 
-        <a href=""><button @click="addProduct" class="button">Add</button></a>
-      </div>
+        <input type="text" v-model="inputProductData.name" placeholder="Title" />
+        <hr class="line2" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+        <div class="tags_title" >tags</div>
+        <!-- <input type="text" style="height:20px;" v-model="inputProductData.description" placeholder="Tags" /> -->
 
-
-
-     <div class="container">
+        <div class="container">
         <div class="tags">
             <div class="tag_style" @click="inputProductData.tags.Indoor= !inputProductData.tags.Indoor" :class="{tag_true:inputProductData.tags.Indoor}"><h3>Indoor</h3></div> 
             <div class="tag_style" @click="inputProductData.tags.Outdoor= !inputProductData.tags.Outdoor" :class="{tag_true:inputProductData.tags.Outdoor}"><h3>Outdoor</h3></div>
@@ -40,23 +29,71 @@
             <div class="tag_style" @click="inputProductData.tags.Exotic= !inputProductData.tags.Exotic" :class="{tag_true:inputProductData.tags.Exotic}"><h3>Exotic</h3></div>
         </div>
     </div>
+
+        <hr class="line3" size="1"  width="98.8181%" color="#CBEAD1">
+        <input type="text" v-model="inputProductData.price" placeholder="$ Price" />
+         <hr class="line4" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+        <input type="text" v-model="inputProductData.photo" placeholder="Photo URL" />
+        <hr class="line4" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+                <input type="text" v-model="inputProductData.location" placeholder="Location" />
+        <hr class="line5" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+        <input type="text" v-model="inputProductData.description" placeholder="Description here" />
+        <hr class="line5" size="1" top="50px" width="98.8181%" color="#CBEAD1">
+
+        <div><button @click="addProduct" class="button"><h3>ADD</h3></button></div>
+      </div>
 </div>
 
 </template>
 
 <style scoped>
 .container_box{
-flex-direction: column;
+background-color: white;
 }
-/* div .container{
-  margin-right: 20px;
-  margin-left: 20px;
-} */
+
 hr.line{
   margin-top: 41px;
-  margin-bottom: 30px;
+  margin-bottom: 1px;
   margin-right: -17.5px;
   margin-left: -17.5px;
+}
+.button {
+  all: unset;
+color: #4CAF50;
+  background-color: #CBEAD1;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 16px;
+  /* position: absolute; */
+  top: 150px;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-left: 100px;
+  margin-top: 10px;
+  border-radius:3px;
+    font-family: 'Poppins';
+}
+
+hr.line2{
+
+  margin-bottom: 1px;
+  margin-right: 30px;
+}
+hr.line3{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-right: 30px;
+}
+hr.line4{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-right: 30px;
+}
+hr.line5{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-right: 30px;
 }
 img{
     height: 17.5px;
@@ -65,17 +102,18 @@ img{
 div{
     display: flex;
     justify-content: space-between;
-    /*padding-top: 61px;*/
-}
-h1{
-    color: #329D9C;
-    background: #FFFFFF;
-    justify-content: space-between;
-    font-family: 'Poppins';
-    letter-spacing: 0.28em;
-    font-size: 106.25%;
+    
 
 }
+
+    h1{
+     font-family: 'Poppins';
+    font-weight: 600;
+    color:darkcyan;
+    text-align: center;
+}
+
+
 
 h2{
     color: #73C088;
@@ -122,8 +160,7 @@ h2{
 .input_container {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
- 
+  margin-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
 
@@ -133,7 +170,17 @@ input {
   /*width: 290px;*/
   height: 30px;
   border-radius: 8px;
-  border: 1px solid #cbead1;
+  border: 1px solid #ffffff;
+}
+
+.tags_title{
+    height: 30px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  color: #cbead1;
+   font-family: 'poppins';
+   font-size: .8em;
+
 }
 
 ::placeholder {
@@ -171,6 +218,7 @@ export default {
         location: "",
         tags:
           {Outdoor:false, Indoor:false, FruitVeg:false, Tropical:false, Succulent:false, Easy:false, Exotic:false}
+        
       },
     };
   },
@@ -189,6 +237,7 @@ export default {
       const fetchedData = await response.json();
       this.fetchAPI();
       console.log("success");
+      this.$router.push('/Home');
     },
     async delProduct(productID) {
       const fetchURL = "http://localhost:4500/products/delete/" + productID;
@@ -220,6 +269,4 @@ export default {
 <script setup>
 
 </script>
-
-
 
