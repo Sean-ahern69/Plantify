@@ -3,7 +3,7 @@
     <div class="container">
         <div class="plant">
             <div class="tags">
-                <h3>{{ProductObject.tags}}</h3>
+                <h3>{{ProductObject.tags= 'Indoor'}}</h3>
                 <img :src="hearticon">
             </div>
             <div class="title">
