@@ -39,7 +39,9 @@
 #doller{
     padding: 0 5px;
 }
-
+.container{
+  padding-bottom: 90px;
+}
 </style>
 
 <script>
