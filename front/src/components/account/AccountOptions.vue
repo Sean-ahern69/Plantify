@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <router-link to="/Home" class="list">
+    <router-link to="/Listings" class="list">
         <img :src="list1">
       <p>MY LISTINGS</p>
     </router-link>

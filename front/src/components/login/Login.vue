@@ -6,7 +6,8 @@
         <input type="text" v-model="email" placeholder="Email" />
         <input type="passworld" v-model="password" placeholder="Password" />
 
-        <router-link to="/Home" class="button">LOG IN</router-link>
+        <!-- <router-link to="/Home" class="button">LOG IN</router-link> -->
+        <button class="button" @click="login">LOG IN</button>
 
         <p>Don't have account? <a @click="showModal = true">SIGN UP</a></p>
       </div>
@@ -126,9 +127,18 @@ export default {
   },
   methods: {
     async login() {
-      let result = await fetch(
-        `http://localhost:4500/users?email=${this.email}&password=${this.password}`
-      )
+      const response = await fetch("http://localhost:4500/users/");
+      const fetchedData = await response.json();
+      // this.usersData = fetchedData;
+
+      if(response.status==200)
+      {
+        console.log("LOGIN!");
+        localStorage.setItem("user-info",JSON.stringify(fetchedData[0]))
+        this.$router.push({ name:'Home' })
+
+        console.log(fetchedData);
+      }
     }
   },
 };

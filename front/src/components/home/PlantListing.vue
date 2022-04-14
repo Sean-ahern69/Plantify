@@ -11,6 +11,7 @@
             <div class="intials">
                 <h4>KJ</h4>
             </div>
+            
             <div class="box-price">
                 <h1>{{ProductObject.name}}</h1>
                 <h3>${{ProductObject.price}}</h3>

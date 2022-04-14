@@ -29,18 +29,24 @@
                     <div class="com-details">
                         <h4>Mustafa Shafiyee</h4>
                         <p>Her plant collection is healthy and wonderful.</p>
+                        <hr>
                     </div>
                 </div>
-                <hr>
+
+                 <div :class="{unhide:commentflag}"  class="newcomment">
+                    <p>{{comment}}</p>
+                    <hr>
+                </div>
+                
                 <br>
+
                 <div class="input_container">
                     <input type="text" v-model="comment" placeholder="Type a new comment" />
-                    <img :src="sendicon">
+                    <img :src="sendicon" @click="postcomment">
                 </div>
 
             </div>
         </div>
-    
 
 
 </div>
@@ -55,6 +61,13 @@ input {
   padding-left: 10px;
   font-family: 'poppins';
 
+}
+
+.newcomment{
+    display: none;
+}
+.unhide{
+    display: block;
 }
 
 .input_container img{
@@ -165,9 +178,16 @@ export default {
     return {
       hearticon: './src/assets/asset 2.png',
       sendicon: './src/assets/Group 28.png',
-      comment:''
+      comment:'',
+      commentflag: false
     }
+  },
+  methods: {
+    postcomment() {
+  this.commentflag=true;
+    },
   }
+
 }
 </script>
 
@@ -179,4 +199,5 @@ defineProps({
   }
 })
 </script>
+
 

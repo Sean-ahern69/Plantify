@@ -18,9 +18,11 @@
           </div>
         </div>
 
-
+          <div class="location" >
           <h3>Location</h3>
-          <input type="text" >
+          <input type="text" placeholder="Christchurch" >
+          </div>
+
       </div>
 
   </div>
@@ -52,6 +54,10 @@
 
 <style>
 
+.location{
+  margin-top: 10px;
+}
+
 .slider-connect{
   background: var(--slider-connect-bg,#56C596);
 
@@ -65,6 +71,14 @@
 
 <style scoped>
 
+input {
+  /*width: 290px;*/
+  height: 30px;
+  border-radius: 3px;
+  border: 2px solid #56C596;
+  margin-top: 10px;
+
+}
 .close_modal{
   position: fixed;
   top: 0;
@@ -81,20 +95,21 @@
   width: 100%;
   box-sizing: border-box;
   font-size: 13px;
+  margin-top: 40px;
   
 }
 
 .modal_bkg{
 
 width: 90vw;
-  height: 40%;
+  height: 50%;
   background-color: white;
    position: fixed;
   left: 50%;
   top: 63%;
   transform: translate(-50%, -50%);
     border-radius:10px;
-    border: 5px solid #73C088;
+    border: 2px solid #73C088;
  
 }
 

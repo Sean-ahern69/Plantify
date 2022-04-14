@@ -20,6 +20,12 @@ const UserSchema = new mongoose.Schema({
   },
   photo: {
     type: String
+  },
+  watchlist:{
+    type: Array
+  },
+  listings:{
+    type: Array
   }
 
 });
