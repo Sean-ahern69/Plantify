@@ -171,6 +171,7 @@ hr{
 </style>
 
 <script>
+
 export default {
   name: 'NavbarComponent',
   data: function() {

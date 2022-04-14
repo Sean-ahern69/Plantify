@@ -24,7 +24,7 @@ defineProps({
         </div>
 
         <div class="buy-now">
-            <BuyNow/>
+            <BuyNow :ProductObject="ProductObject"/>
         </div>
     </div>
     
