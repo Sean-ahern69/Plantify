@@ -106,6 +106,7 @@ h2 {
   letter-spacing: 10px;
   color: #329d9c;
   padding-top: 50px;
+  font-family: "Poppins", sans-serif;
 }
 </style>
 
