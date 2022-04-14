@@ -49,9 +49,9 @@
 .plant-box{
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
-    margin: 2%;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }

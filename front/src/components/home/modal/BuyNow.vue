@@ -2,7 +2,7 @@
     <div class="container">
         <div class="details">
             <h3>
-                $35
+                ${{ProductObject.price}}
             </h3>
             <h5>
                 Closes: <br>
@@ -58,5 +58,10 @@
 </script>
 
 <script setup>
-
+defineProps({
+  ProductObject: {
+    type: Object,
+    required: true
+  }
+})
 </script>
