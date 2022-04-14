@@ -4,10 +4,10 @@
         <img :src="list1">
       <p>MY LISTINGS</p>
     </router-link>
-    <div class="list">
+    <router-link to="/Watchlist" class="list">
         <img :src="list2">
       <p>WATCH LIST</p>
-    </div>
+    </router-link>
     <div class="list">
         <img :src="list3" id="doller">
       <p>SOLD ITEMS</p>
