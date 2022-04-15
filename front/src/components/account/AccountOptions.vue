@@ -26,7 +26,6 @@
     align-items: center;
     border-bottom: 1px solid #cbead1;
     width: 100%;
-    margin: 0 30px;
     padding: 15px 0;
     text-decoration: none;
     color: black;
